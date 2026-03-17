@@ -1,0 +1,663 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+/*** SCROLLBAR START ***/
+  ::-webkit-scrollbar {
+
+    width: 16px
+
+  }
+
+
+  ::-webkit-scrollbar:horizontal {
+
+    height: 17px
+
+  }
+
+
+  ::-webkit-scrollbar-corner {
+
+    background: #eee
+
+  }
+
+
+  ::-webkit-scrollbar-track:vertical {
+
+    background: linear-gradient(90deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-track:horizontal {
+
+    background: linear-gradient(180deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-thumb {
+
+    background-color: #eee;
+
+    border: 1px solid #8e8f8f;
+
+    border-radius: 3px;
+
+    box-shadow: inset 0 -1px 1px hsla(0, 0%, 100%, .8), inset 0 1px 1px #fff
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:vertical {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAIAAADpZ+PpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADrSURBVChTTc5LboJQGAXguyoCu4ERCzAGlRk7UOwGWIDh0s4M4kxb06RSq/jAB6AxJkJ4lTDrue3AnvyzP+fLId+/yfM8juP7PQmCCOf7B3e+ZD+O40RRVFW12VQUpd3r9U3T2m4OpKoqWZYNwzBZLEqfh0N7NnvfrPcEWlEUWZb9mWF4Ph6D0ylcLbfM5HkeJrhGA2hb15/QXnv+w7RYXsDatjOdvnmrHSnLEizMNE2v11sUXQBCnn98kbquBUGQJAlmq9WB2e3qg4HJdqKkaRql1HGc0WgMcDJ5dd0F24kediZJ8t/ELT69H+8py0CYSIO5AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(90deg, #eee 45%, #ddd 0, #bbb)
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:horizontal {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAYAAAALpr0TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADcSURBVChTNZBLqoUwEEQrURQUxZGCvy24ACfiityJi7tv8GauQoPxk5tquA2RQ9vVVYk6z9NZaxFFEe77htYazjk8z4MwDIVZ+rourOuKaZrwvi+WZcE8z1BKCbPPCjk4DAO2bRP1OI7wLiL6Mbd7J408z1GWpQwWRYGqqiQG+03TgMu0MacfUN4qANmn8UOv9MjW3sKaSm7iIdOSlziOQ3LScd93aPonSYK6riVLlmVo21aYfVqzND9pmqLrOlGT+76XbcxLZkb19/l3fEP+oF0cx8KMEASBsDEGX2/CgZCHkg+8AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(180deg, #eee 45%, #ddd 0, #bbb)
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:hover:vertical {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAIAAADpZ+PpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADrSURBVChTTc5LboJQGAXguyoCu4ERCzAGlRk7UOwGWIDh0s4M4kxb06RSq/jAB6AxJkJ4lTDrue3AnvyzP+fLId+/yfM8juP7PQmCCOf7B3e+ZD+O40RRVFW12VQUpd3r9U3T2m4OpKoqWZYNwzBZLEqfh0N7NnvfrPcEWlEUWZb9mWF4Ph6D0ylcLbfM5HkeJrhGA2hb15/QXnv+w7RYXsDatjOdvnmrHSnLEizMNE2v11sUXQBCnn98kbquBUGQJAlmq9WB2e3qg4HJdqKkaRql1HGc0WgMcDJ5dd0F24kediZJ8t/ELT69H+8py0CYSIO5AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(90deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:hover:horizontal {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAYAAAALpr0TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADcSURBVChTNZBLqoUwEEQrURQUxZGCvy24ACfiityJi7tv8GauQoPxk5tquA2RQ9vVVYk6z9NZaxFFEe77htYazjk8z4MwDIVZ+rourOuKaZrwvi+WZcE8z1BKCbPPCjk4DAO2bRP1OI7wLiL6Mbd7J408z1GWpQwWRYGqqiQG+03TgMu0MacfUN4qANmn8UOv9MjW3sKaSm7iIdOSlziOQ3LScd93aPonSYK6riVLlmVo21aYfVqzND9pmqLrOlGT+76XbcxLZkb19/l3fEP+oF0cx8KMEASBsDEGX2/CgZCHkg+8AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(180deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:active:vertical {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAIAAADpZ+PpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADrSURBVChTTc5LboJQGAXguyoCu4ERCzAGlRk7UOwGWIDh0s4M4kxb06RSq/jAB6AxJkJ4lTDrue3AnvyzP+fLId+/yfM8juP7PQmCCOf7B3e+ZD+O40RRVFW12VQUpd3r9U3T2m4OpKoqWZYNwzBZLEqfh0N7NnvfrPcEWlEUWZb9mWF4Ph6D0ylcLbfM5HkeJrhGA2hb15/QXnv+w7RYXsDatjOdvnmrHSnLEizMNE2v11sUXQBCnn98kbquBUGQJAlmq9WB2e3qg4HJdqKkaRql1HGc0WgMcDJ5dd0F24kediZJ8t/ELT69H+8py0CYSIO5AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(90deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:active:horizontal {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAYAAAALpr0TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADcSURBVChTNZBLqoUwEEQrURQUxZGCvy24ACfiityJi7tv8GauQoPxk5tquA2RQ9vVVYk6z9NZaxFFEe77htYazjk8z4MwDIVZ+rourOuKaZrwvi+WZcE8z1BKCbPPCjk4DAO2bRP1OI7wLiL6Mbd7J408z1GWpQwWRYGqqiQG+03TgMu0MacfUN4qANmn8UOv9MjW3sKaSm7iIdOSlziOQ3LScd93aPonSYK6riVLlmVo21aYfVqzND9pmqLrOlGT+76XbcxLZkb19/l3fEP+oF0cx8KMEASBsDEGX2/CgZCHkg+8AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(180deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-button:horizontal:end:decrement,
+
+  ::-webkit-scrollbar-button:horizontal:start:increment,
+
+  ::-webkit-scrollbar-button:vertical:end:decrement,
+
+  ::-webkit-scrollbar-button:vertical:start:increment {
+
+    display: none
+
+  }
+
+
+  ::-webkit-scrollbar-button {
+
+    border: 1px solid transparent
+
+  }
+
+
+  ::-webkit-scrollbar-button:vertical {
+
+    height: 17px
+
+  }
+
+
+  ::-webkit-scrollbar-button:vertical:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik04IDZIN3YxSDZ2MUg1djFINHYxaDdWOWgtMVY4SDlWN0g4VjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-button:vertical:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik0xMSA2SDR2MWgxdjFoMXYxaDF2MWgxVjloMVY4aDFWN2gxVjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-button:horizontal {
+
+    width: 16px
+
+  }
+
+
+  ::-webkit-scrollbar-button:horizontal:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik05IDRIOHYxSDd2MUg2djFINXYxaDF2MWgxdjFoMXYxaDFWNFoiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4="), linear-gradient(180deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-button:horizontal:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik03IDRINnY3aDF2LTFoMVY5aDFWOGgxVjdIOVY2SDhWNUg3VjRaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(180deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover {
+
+    background-color: #eee;
+
+    border-color: #8e8f8f;
+
+    border-radius: 3px;
+
+    box-shadow: inset 0 -1px 1px hsla(0, 0%, 100%, .8), inset 0 1px 1px #fff
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:vertical {
+
+    height: 17px
+
+  }
+
+
+::-webkit-scrollbar-button:hover:vertical:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik04IDZIN3YxSDZ2MUg1djFINHYxaDdWOWgtMVY4SDlWN0g4VjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:vertical:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik0xMSA2SDR2MWgxdjFoMXYxaDF2MWgxVjloMVY4aDFWN2gxVjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:horizontal {
+
+    width: 16px
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:horizontal:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik05IDRIOHYxSDd2MUg2djFINXYxaDF2MWgxdjFoMXYxaDFWNFoiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4="), linear-gradient(180deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:horizontal:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik03IDRINnY3aDF2LTFoMVY5aDFWOGgxVjdIOVY2SDhWNUg3VjRaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(180deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-button:active {
+
+    background-color: #eee;
+
+    border-color: #8e8f8f;
+
+    border-radius: 3px;
+
+    box-shadow: inset 0 -1px 1px hsla(0, 0%, 100%, .8), inset 0 1px 1px #fff
+
+  }
+
+
+  .contact,
+
+  .contact .inner,
+
+  nav,
+
+  nav .links li a:not([title~=Notifications]) {
+
+    box-shadow: 0 0 0px .0px #fff
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:vertical {
+
+    height: 17px
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:vertical:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik04IDZIN3YxSDZ2MUg1djFINHYxaDdWOWgtMVY4SDlWN0g4VjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:vertical:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik0xMSA2SDR2MWgxdjFoMXYxaDF2MWgxVjloMVY4aDFWN2gxVjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:horizontal {
+
+    width: 16px
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:horizontal:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik05IDRIOHYxSDd2MUg2djFINXYxaDF2MWgxdjFoMXYxaDFWNFoiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4="), linear-gradient(180deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:horizontal:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik03IDRINnY3aDF2LTFoMVY5aDFWOGgxVjdIOVY2SDhWNUg3VjRaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(180deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+/*** SCROLLBAR END ***/
+a {
+  cursor: crosshair;
+}
+				@font-face {
+   font-family: MS Gothic;
+   src: url(https://file.garden/ZkBMEUcxSy6EAJ37/web/MS-Gothic.woff);
+}
+				@font-face {
+   font-family: Sir Clive the Bold;
+   src: url(https://file.garden/ZkBMEUcxSy6EAJ37/web/SIRCLIVETHEBOLD.woff);
+}
+	body {
+	font-smooth: never;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 12px;
+}
+		o {
+  text-shadow: -1px -1px 0 #000000, -0px -1px 0 #000000, -1px -0px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000, 2px 2px 0 #000000, 0px 2px 0 #000000, 2px 0px 0 #000000, 1px 2px 0 #000000, 2px 1px 0 #000000; 
+}
+			::-moz-selection { 
+  color: #000000;
+  background: #ffffff;
+}
+	::selection {
+  color: #000000;
+  background: #ffffff;
+}
+b {
+font-family: Sir Clive the Bold;
+font-size: 15px;
+letter-spacing: 1px;
+}
+
+a:link {
+  color: #beff02;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #beff02;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #5c5b6a;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  color: #5c5b6a;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+#info {
+cursor: help;
+}
+
+	</style>
+<link rel="icon" type="image/x-icon" href="http://soap11111111.github.io/1/img/fav.ico">
+</head>
+<body font face="MS Gothic">
+<div>
+<font face="MS Gothic" color="#ffffff">
+<o>
+<b>IMG | SOZAI</b>
+<br>
+<a href="https://oldinterneticons.tumblr.com/" target="_blank">
+oldinterneticons.tumblr.com
+</a>
+<br>
+<a href="https://directory.cinni.net/" target="_blank">
+directory.cinni.net
+</a>
+/
+<a href="https://archive.cinni.net/" target="_blank">
+archive.cinni.net
+</a>
+<br>
+<a href="https://mypillowfort.net/" target="_blank">
+mypillowfort.net
+</a>
+<br>
+<a href="https://teppyslayouts.neocities.org/" target="_blank">
+teppyslayouts.neocities.org
+</a>
+<br>
+<a href="https://repth.neocities.org/" target="_blank">
+repth.neocities.org
+</a>
+<br>
+<a href="https://www.glitter-graphics.com/" target="_blank">
+glitter-graphics.com
+</a>
+<br>
+<a href="https://llca.jugem.jp/" target="_blank">
+llca.jugem.jp
+</a>
+<br>
+<a href="https://foollovers.com/" target="_blank">
+foollovers.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20250225013244/https://8bity.net/" target="_blank">
+8bity.net
+</a>
+<br>
+<a href="http://whimsical.heartette.net/" target="_blank">
+whimsical.heartette.net
+</a>
+<br>
+<a href="https://clockwork-fairy.neocities.org/" target="_blank">
+clockwork-fairy.neocities.org
+</a>
+<a href="http://misa.phoophie.com/" target="_blank">
+misa.phoophie.com
+</a>
+<br>
+<a href="http://misadolly56.web.fc2.com/" target="_blank">
+misadolly56.web.fc2.com
+</a>
+<br>
+<a href="https://rotferkelthemes.tumblr.com/" target="_blank">
+rotferkelthemes.tumblr.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20170626183920/http://mooncat.official.jp/index.html" target="_blank">
+mooncat.official.jp
+</a>
+<br>
+<a href="https://lastsecret.net/bitmapdreams/" target="_blank">
+lastsecret.net
+</a>
+<br>
+<a href="https://web.badges.world/" target="_blank">
+web.badges.world
+</a>
+<br>
+<a href="https://artwork.neocities.org/" target="_blank">
+artwork.neocities.org
+</a>
+<br>
+<a href="https://mooncandy.net/stef/" target="_blank">
+mooncandy.net
+</a>
+<br>
+<a href="https://lejlart.com/apple.html" target="_blank">
+lejlart.com
+</a>
+<br>
+<a href="https://angel-dust.nekoweb.org/" target="_blank">
+angel-dust.nekoweb.org
+</a>
+<br>
+<a href="https://xboxgamer.pics/" target="_blank">
+xboxgamer.pics
+</a>
+<br>
+<a href="https://salvaged.nu/" target="_blank">
+salvaged.nu
+</a>
+<br>
+<a href="https://ezgif.com/" target="_blank">
+ezgif.com
+</a>
+<br>
+<a href="https://gyng.github.io/ditherer/" target="_blank">
+ditherer.gyng.github.io
+</a>
+<br>
+<a href="https://doodad.dev/" target="_blank">
+doodad.dev
+</a>
+<br>
+<br>
+<b>FONTS | GRAPHIK</b>
+<img id="info" title="many items are pay-to-use" draggable="false" (dragstart)="false;"  src="http://soap11111111.github.io/1/img/warn.png">
+<br>
+<a href="https://www.dafont.com/" target="_blank">
+dafont.com
+</a>
+<br>
+<a href="https://www.1001fonts.com/" target="_blank">
+1001fonts.com
+</a>
+<br>
+<a href="https://www.freejapanesefont.com/" target="_blank">
+freejapanesefont.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20081217032537/http://www.orange.ne.jp/~den7/" target="_blank">
+orange.ne.jp
+</a>
+<br>
+<a href="https://github.com/froyotam/ael-02.ael-pak" target="_blank">
+ael-02.ael-pak</a> / <a href="https://github.com/froyotam/ael-04.ael-pak.02" target="_blank">ael-04.ael-pak.02</a>
+<br>
+<a href="https://sickagain.gumroad.com/" target="_blank">
+sickagain.gumroad.com
+</a>
+<br>
+<a href="https://jvill.gumroad.com/" target="_blank">
+jvill.gumroad.com
+</a>
+<br>
+<a href="https://zuli.gumroad.com/" target="_blank">
+zuli.gumroad.com
+</a>
+<br>
+<br>
+<a href="https://designsyndrome.gumroad.com/" target="_blank">
+designsyndrome.gumroad.com
+</a>
+<br>
+<a href="https://desktopgeneration.itch.io/" target="_blank">
+desktopgeneration.itch.io
+</a>
+<br>
+<a href="https://hvnter.net/" target="_blank">
+hvnter.net
+</a>
+<br>
+<a href="http://www.planet.dk/fonts/" target="_blank">
+planet.dk
+</a>
+<br>
+<a href="https://www.pentacom.jp/pentacom/bitfontmaker2/gallery/" target="_blank">
+bitfontmaker.jp
+</a>
+<br>
+<a href="https://www.dreadlabs.net/" target="_blank">
+dreadlabs.net
+</a>
+<a href="https://saintricchi.com/" target="_blank">
+saintricchi.com
+</a>
+<br>
+<a href="https://duckwithsunglasses.com/" target="_blank">
+duckwithsunglasses.com
+</a>
+<br>
+<br>
+<b>DEVIANTART</b>
+<img id="info" title="requires an account for downloading" draggable="false" (dragstart)="false;"  src="http://soap11111111.github.io/1/img/warn.png">
+<br>
+<a href="https://www.deviantart.com/sentinel-gfx/gallery" target="_blank">
+sentinel-gfx
+</a>
+<br>
+<a href="https://www.deviantart.com/paulw/gallery/3427552/photoshop-brushes" target="_blank">
+paulw
+</a>
+<br>
+<a href="https://www.deviantart.com/digital-nexus/gallery" target="_blank">
+digital-nexus
+</a>
+<br>
+<a href="https://www.deviantart.com/z-design/gallery" target="_blank">
+z-design
+</a>
+<br>
+<a href="https://www.deviantart.com/ihea/gallery/199478/brushes" target="_blank">
+ihea
+</a>
+<br>
+<a href="https://www.deviantart.com/ranicx/gallery" target="_blank">
+ranicx
+</a>
+<br>
+<a href="https://www.deviantart.com/shiftyj/gallery/12217969/photoshop-brushes" target="_blank">
+shiftyj
+</a>
+<br>
+<a href="https://www.deviantart.com/metal-cx/gallery/241650/brushes" target="_blank">
+metal-cx
+</a>
+<br>
+<a href="https://www.deviantart.com/basstar/gallery/957308/resources" target="_blank">
+basstar
+</a>
+<br>
+<a href="https://www.deviantart.com/axeraider70/gallery/430564/photoshop-brushes" target="_blank">
+axeraider70
+</a>
+<br>
+<a href="https://www.deviantart.com/kittenbella/gallery" target="_blank">
+kittenbella
+</a>
+<br>
+<a href="https://www.deviantart.com/thesuper/gallery/138458/free-resources" target="_blank">
+thesuper
+</a>
+<br>
+<a href="https://www.deviantart.com/veredgf/gallery" target="_blank">
+veredgf
+</a>
+<br>
+<a href="https://www.deviantart.com/vpdesigns/gallery" target="_blank">
+vpdesigns
+</a>
+<br>
+<a href="https://www.deviantart.com/genuine-atramentous/gallery" target="_blank">
+genuine-atramentous
+</a>
+<br>
+<a href="https://www.deviantart.com/nickmeister/gallery" target="_blank">
+nickmeister
+</a>
+<br>
+<a href="https://www.deviantart.com/kirasources/gallery" target="_blank">
+kirasources
+</a>
+<br>
+<a href="https://www.deviantart.com/xaliasx/gallery" target="_blank">
+xaliasx
+</a>
+<br>
+<a href="https://www.deviantart.com/vikomt/gallery" target="_blank">
+vikomt
+</a>
+<br>
+<a href="https://www.deviantart.com/redheadstock/gallery" target="_blank">
+redheadstock
+</a>
+<br>
+<a href="https://www.deviantart.com/env1ro/gallery" target="_blank">
+env1ro
+</a>
+<br>
+<a href="https://www.deviantart.com/ardcor/gallery" target="_blank">
+ardcor
+</a>
+<br>
+<a href="https://www.deviantart.com/weknow/gallery" target="_blank">
+weknow
+</a>
+<br>
+<a href="https://www.deviantart.com/scully7491/gallery/3899506/brushes" target="_blank">
+scully7491
+</a>
+<a href="https://www.deviantart.com/gasara/gallery/28693646/free-resources" target="_blank">
+gasara
+</a>
+<br>
+<a href="https://www.deviantart.com/crazykira-resources/gallery" target="_blank">
+crazykira-resources
+</a>
+<br>
+<a href="https://www.deviantart.com/awesome-fonts/gallery" target="_blank">
+awesome-fonts
+</a>
+</o>
+</font>
+</div>
+</body>
+</html>

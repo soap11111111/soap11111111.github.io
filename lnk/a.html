@@ -1,0 +1,609 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+/*** SCROLLBAR START ***/
+  ::-webkit-scrollbar {
+
+    width: 16px
+
+  }
+
+
+  ::-webkit-scrollbar:horizontal {
+
+    height: 17px
+
+  }
+
+
+  ::-webkit-scrollbar-corner {
+
+    background: #eee
+
+  }
+
+
+  ::-webkit-scrollbar-track:vertical {
+
+    background: linear-gradient(90deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-track:horizontal {
+
+    background: linear-gradient(180deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-thumb {
+
+    background-color: #eee;
+
+    border: 1px solid #8e8f8f;
+
+    border-radius: 3px;
+
+    box-shadow: inset 0 -1px 1px hsla(0, 0%, 100%, .8), inset 0 1px 1px #fff
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:vertical {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAIAAADpZ+PpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADrSURBVChTTc5LboJQGAXguyoCu4ERCzAGlRk7UOwGWIDh0s4M4kxb06RSq/jAB6AxJkJ4lTDrue3AnvyzP+fLId+/yfM8juP7PQmCCOf7B3e+ZD+O40RRVFW12VQUpd3r9U3T2m4OpKoqWZYNwzBZLEqfh0N7NnvfrPcEWlEUWZb9mWF4Ph6D0ylcLbfM5HkeJrhGA2hb15/QXnv+w7RYXsDatjOdvnmrHSnLEizMNE2v11sUXQBCnn98kbquBUGQJAlmq9WB2e3qg4HJdqKkaRql1HGc0WgMcDJ5dd0F24kediZJ8t/ELT69H+8py0CYSIO5AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(90deg, #eee 45%, #ddd 0, #bbb)
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:horizontal {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAYAAAALpr0TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADcSURBVChTNZBLqoUwEEQrURQUxZGCvy24ACfiityJi7tv8GauQoPxk5tquA2RQ9vVVYk6z9NZaxFFEe77htYazjk8z4MwDIVZ+rourOuKaZrwvi+WZcE8z1BKCbPPCjk4DAO2bRP1OI7wLiL6Mbd7J408z1GWpQwWRYGqqiQG+03TgMu0MacfUN4qANmn8UOv9MjW3sKaSm7iIdOSlziOQ3LScd93aPonSYK6riVLlmVo21aYfVqzND9pmqLrOlGT+76XbcxLZkb19/l3fEP+oF0cx8KMEASBsDEGX2/CgZCHkg+8AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(180deg, #eee 45%, #ddd 0, #bbb)
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:hover:vertical {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAIAAADpZ+PpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADrSURBVChTTc5LboJQGAXguyoCu4ERCzAGlRk7UOwGWIDh0s4M4kxb06RSq/jAB6AxJkJ4lTDrue3AnvyzP+fLId+/yfM8juP7PQmCCOf7B3e+ZD+O40RRVFW12VQUpd3r9U3T2m4OpKoqWZYNwzBZLEqfh0N7NnvfrPcEWlEUWZb9mWF4Ph6D0ylcLbfM5HkeJrhGA2hb15/QXnv+w7RYXsDatjOdvnmrHSnLEizMNE2v11sUXQBCnn98kbquBUGQJAlmq9WB2e3qg4HJdqKkaRql1HGc0WgMcDJ5dd0F24kediZJ8t/ELT69H+8py0CYSIO5AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(90deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:hover:horizontal {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAYAAAALpr0TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADcSURBVChTNZBLqoUwEEQrURQUxZGCvy24ACfiityJi7tv8GauQoPxk5tquA2RQ9vVVYk6z9NZaxFFEe77htYazjk8z4MwDIVZ+rourOuKaZrwvi+WZcE8z1BKCbPPCjk4DAO2bRP1OI7wLiL6Mbd7J408z1GWpQwWRYGqqiQG+03TgMu0MacfUN4qANmn8UOv9MjW3sKaSm7iIdOSlziOQ3LScd93aPonSYK6riVLlmVo21aYfVqzND9pmqLrOlGT+76XbcxLZkb19/l3fEP+oF0cx8KMEASBsDEGX2/CgZCHkg+8AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(180deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:active:vertical {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAIAAADpZ+PpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADrSURBVChTTc5LboJQGAXguyoCu4ERCzAGlRk7UOwGWIDh0s4M4kxb06RSq/jAB6AxJkJ4lTDrue3AnvyzP+fLId+/yfM8juP7PQmCCOf7B3e+ZD+O40RRVFW12VQUpd3r9U3T2m4OpKoqWZYNwzBZLEqfh0N7NnvfrPcEWlEUWZb9mWF4Ph6D0ylcLbfM5HkeJrhGA2hb15/QXnv+w7RYXsDatjOdvnmrHSnLEizMNE2v11sUXQBCnn98kbquBUGQJAlmq9WB2e3qg4HJdqKkaRql1HGc0WgMcDJ5dd0F24kediZJ8t/ELT69H+8py0CYSIO5AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(90deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:active:horizontal {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAYAAAALpr0TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADcSURBVChTNZBLqoUwEEQrURQUxZGCvy24ACfiityJi7tv8GauQoPxk5tquA2RQ9vVVYk6z9NZaxFFEe77htYazjk8z4MwDIVZ+rourOuKaZrwvi+WZcE8z1BKCbPPCjk4DAO2bRP1OI7wLiL6Mbd7J408z1GWpQwWRYGqqiQG+03TgMu0MacfUN4qANmn8UOv9MjW3sKaSm7iIdOSlziOQ3LScd93aPonSYK6riVLlmVo21aYfVqzND9pmqLrOlGT+76XbcxLZkb19/l3fEP+oF0cx8KMEASBsDEGX2/CgZCHkg+8AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(180deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-button:horizontal:end:decrement,
+
+  ::-webkit-scrollbar-button:horizontal:start:increment,
+
+  ::-webkit-scrollbar-button:vertical:end:decrement,
+
+  ::-webkit-scrollbar-button:vertical:start:increment {
+
+    display: none
+
+  }
+
+
+  ::-webkit-scrollbar-button {
+
+    border: 1px solid transparent
+
+  }
+
+
+  ::-webkit-scrollbar-button:vertical {
+
+    height: 17px
+
+  }
+
+
+  ::-webkit-scrollbar-button:vertical:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik04IDZIN3YxSDZ2MUg1djFINHYxaDdWOWgtMVY4SDlWN0g4VjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-button:vertical:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik0xMSA2SDR2MWgxdjFoMXYxaDF2MWgxVjloMVY4aDFWN2gxVjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-button:horizontal {
+
+    width: 16px
+
+  }
+
+
+  ::-webkit-scrollbar-button:horizontal:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik05IDRIOHYxSDd2MUg2djFINXYxaDF2MWgxdjFoMXYxaDFWNFoiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4="), linear-gradient(180deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-button:horizontal:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik03IDRINnY3aDF2LTFoMVY5aDFWOGgxVjdIOVY2SDhWNUg3VjRaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(180deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover {
+
+    background-color: #eee;
+
+    border-color: #8e8f8f;
+
+    border-radius: 3px;
+
+    box-shadow: inset 0 -1px 1px hsla(0, 0%, 100%, .8), inset 0 1px 1px #fff
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:vertical {
+
+    height: 17px
+
+  }
+
+
+::-webkit-scrollbar-button:hover:vertical:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik04IDZIN3YxSDZ2MUg1djFINHYxaDdWOWgtMVY4SDlWN0g4VjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:vertical:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik0xMSA2SDR2MWgxdjFoMXYxaDF2MWgxVjloMVY4aDFWN2gxVjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:horizontal {
+
+    width: 16px
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:horizontal:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik05IDRIOHYxSDd2MUg2djFINXYxaDF2MWgxdjFoMXYxaDFWNFoiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4="), linear-gradient(180deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:horizontal:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik03IDRINnY3aDF2LTFoMVY5aDFWOGgxVjdIOVY2SDhWNUg3VjRaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(180deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-button:active {
+
+    background-color: #eee;
+
+    border-color: #8e8f8f;
+
+    border-radius: 3px;
+
+    box-shadow: inset 0 -1px 1px hsla(0, 0%, 100%, .8), inset 0 1px 1px #fff
+
+  }
+
+
+  .contact,
+
+  .contact .inner,
+
+  nav,
+
+  nav .links li a:not([title~=Notifications]) {
+
+    box-shadow: 0 0 0px .0px #fff
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:vertical {
+
+    height: 17px
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:vertical:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik04IDZIN3YxSDZ2MUg1djFINHYxaDdWOWgtMVY4SDlWN0g4VjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:vertical:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik0xMSA2SDR2MWgxdjFoMXYxaDF2MWgxVjloMVY4aDFWN2gxVjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:horizontal {
+
+    width: 16px
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:horizontal:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik05IDRIOHYxSDd2MUg2djFINXYxaDF2MWgxdjFoMXYxaDFWNFoiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4="), linear-gradient(180deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:horizontal:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik03IDRINnY3aDF2LTFoMVY5aDFWOGgxVjdIOVY2SDhWNUg3VjRaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(180deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+/*** SCROLLBAR END ***/
+a {
+  cursor: crosshair;
+}
+				@font-face {
+   font-family: MS Gothic;
+   src: url(https://file.garden/ZkBMEUcxSy6EAJ37/web/MS-Gothic.woff);
+}
+				@font-face {
+   font-family: Sir Clive the Bold;
+   src: url(https://file.garden/ZkBMEUcxSy6EAJ37/web/SIRCLIVETHEBOLD.woff);
+}
+
+	body {
+	font-smooth: never;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 12px;
+}
+		o {
+  text-shadow: -1px -1px 0 #000000, -0px -1px 0 #000000, -1px -0px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000, 2px 2px 0 #000000, 0px 2px 0 #000000, 2px 0px 0 #000000, 1px 2px 0 #000000, 2px 1px 0 #000000; 
+}
+			::-moz-selection { 
+  color: #000000;
+  background: #ffffff;
+}
+	::selection {
+  color: #000000;
+  background: #ffffff;
+}
+b {
+font-family: Sir Clive the Bold;
+font-size: 15px;
+letter-spacing: 1px;
+}
+
+a:link {
+  color: #beff02;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #beff02;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #5c5b6a;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  color: #5c5b6a;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+	</style>
+<link rel="icon" type="image/x-icon" href="img/fav.ico">
+</head>
+<body font face="MS Gothic">
+<div>
+<font face="MS Gothic" color="#ffffff">
+<o>
+<b>EXHIBIT</b>
+<br>
+<a href="https://cari.institute/" target="_blank">
+cari.institute
+</a>
+<br>
+<a href="https://www.webdesignmuseum.org/" target="_blank">
+webdesignmuseum.org
+</a>
+<br>
+<a href="https://skins.webamp.org/" target="_blank">
+skins.webamp.org
+</a>
+<br>
+<a href="https://fontsinuse.com/" target="_blank">
+fontsinuse.com
+</a>
+<br>
+<a href="https://tokyofashion.com/" target="_blank">
+tokyofashion.com
+</a>
+<br>
+<a href="https://y2kaestheticinstitute.tumblr.com/" target="_blank">
+y2kaestheticinstitute.tumblr.com
+</a>
+<br>
+<a href="https://www.phatmedia.co.uk/" target="_blank">
+phatmedia.co.uk
+</a>
+<br>
+<br>
+<b>ARCHIVE</b>
+<br>
+<a href="https://web.archive.org/web/20040703063618/https://www.tokyoplastic.com/menu.html" target="_blank">
+tokyoplastic.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20030808035025/http://warprecords.com/" target="_blank">
+warprecords.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20011227065622fw_/http://www.cubadust.com/cframe2.htm" target="_blank">
+cubadust.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20020603010130/http://djdieselboy.com/" target="_blank">
+djdieselboy.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20110910162521/http://www.bionic-systems.com/archive/portfolio2001/" target="_blank">
+bionic-systems.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20010823011119/http://gmunk.com/" target="_blank">
+gmunk.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20020925093734/http://www.sixstation.com/index1.html" target="_blank">
+sixstation.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20020603000845/http://urbandesk.free.fr/" target="_blank">
+urbandesk.free.fr
+</a>
+<br>
+<a href="https://web.archive.org/web/20040701093237/http://www.flashlevel.com/" target="_blank">
+flashlevel.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20070110170401fw_/http://v2.2a-archive.com:80/flashindex.htm" target="_blank">
+2advanced.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20050315090451/http://www.99rooms.com/" target="_blank">
+99rooms.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20031212075322/http://www.plasticbag.de/v4/index.html" target="_blank">
+plasticbag.de
+</a>
+<br>
+<a href="https://web.archive.org/web/20070824043122/http://orange.half-life2.com/index.html" target="_blank">
+orange.half-life2.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20030920020622/http://halo.bungie.net/" target="_blank">
+halo.bungie.net
+</a>
+<br>
+<a href="https://web.archive.org/web/20090427005310/http://multinationalunited.com/" target="_blank">
+multinationalunited.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20101002022802/http://www.mnuspreadslies.com/" target="_blank">
+mnuspreadslies.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20010406131601/http://www.din.or.jp/~niieichi/index4.html" target="_blank">
+2h.din.or.jp
+</a>
+<br>
+<a href="https://web.archive.org/web/20080331075412/http://www.skullbites.com/" target="_blank">
+skullbites.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20080331111550/http://www.designchapel.com/" target="_blank">
+designchapel.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20041128072927/http://www.citrus.co.jp/" target="_blank">
+citrus.co.jp
+</a>
+<br>
+<a href="https://web.archive.org/web/20080509110505/http://www.xl5design.com/" target="_blank">
+xl5design.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20031121104858/http://bjork.com/" target="_blank">
+bjork.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20010611070409/http://www.nintendo.com/index.jsp" target="_blank">
+nintendo.com
+</a>
+<br>
+<a href="https://web.archive.org/web/20240621233646/https://vlif.neocities.org/" target="_blank">
+vlif.neocities.org
+</a>
+<br>
+<br>
+<b>GALLERY | PORTFOLIO</b>
+<br>
+<a href="https://dv.dvihypermedia.net/" target="_blank">
+dv.dvihypermedia.net
+</a>
+<br>
+<a href="https://www.froyotam.info/" target="_blank">
+froyotam.info
+</a>
+<br>
+<a href="http://www.mizuno-junko.com/" target="_blank">
+mizuno-junko.com
+</a>
+<br>
+<a href="https://www.nathalie-nguyen.com/" target="_blank">
+nathalie-nguyen.com
+</a>
+<br>
+<a href="https://bench.rip/" target="_blank">
+bench.rip
+</a>
+<br>
+<a href="http://www.04.jp.org/" target="_blank">
+04.jp.org
+</a>
+<br>
+<a href="https://jojodelacruz.com/" target="_blank">
+jojodelacruz.com
+</a>
+<br>
+<a href="https://www.desktopgeneration.com/" target="_blank">
+desktopgeneration.com
+</a>
+<br>
+<a href="https://antireal.info/" target="_blank">
+antireal.info
+</a>
+<br>
+<a href="http://futureexpress.net/" target="_blank">
+futureexpress.net
+</a>
+<br>
+<a href="https://d-junk.jpn.org/" target="_blank">
+d-junk.jpn.org
+</a>
+<br>
+<a href="https://wsx.moe/" target="_blank">
+wsx.moe
+</a>
+<br>
+<a href="https://brainpoison.neocities.org/" target="_blank">
+brainpoison.neocities.org
+</a>
+<br>
+<a href="https://www.jasonfreeny.com/" target="_blank">
+jasonfreeny.com
+</a>
+<br>
+<a href="https://7174publishing.com/" target="_blank">
+7174publishing.com
+</a>
+<br>
+<a href="https://xinus22.carrd.co/" target="_blank">
+xinus22.carrd.co
+</a>
+<br>
+<a href="https://ct6000.onuniverse.com/" target="_blank">
+ct6000.onuniverse.com
+</a>
+<br>
+<a href="https://baasng.newgrounds.com/" target="_blank">
+baasng.newgrounds.com
+</a>
+<br>
+<a href="https://ghostsnacksdesign.weebly.com/" target="_blank">
+ghostsnacksdesign.weebly.com
+</a>
+<br>
+<a href="https://milobit.net/" target="_blank">
+milobit.net
+</a>
+<br>
+<a href="https://chocographix.net/" target="_blank">
+chocographix.net
+</a>
+<br>
+<a href="https://czechwun.myportfolio.com/" target="_blank">
+czechwun.myportfolio.com
+</a>
+<br>
+<a href="https://herotrap.neocities.org/" target="_blank">
+herotrap.neocities.org
+</a>
+<br>
+<a href="https://slitter33.com/" target="_blank">
+slitter33.com
+</a>
+<br>
+<a href="https://www.nttfiles.com/" target="_blank">
+nttfiles.com
+</a>
+<br>
+<a href="https://www.takada.works/" target="_blank">
+takada.works
+</a>
+</o>
+</font>
+</div>
+</body>
+</html>
