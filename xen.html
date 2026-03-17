@@ -1,0 +1,691 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<style type="text/css">
+/*** SCROLLBAR START ***/
+  ::-webkit-scrollbar {
+
+    width: 16px
+
+  }
+
+
+  ::-webkit-scrollbar:horizontal {
+
+    height: 17px
+
+  }
+
+
+  ::-webkit-scrollbar-corner {
+
+    background: #eee
+
+  }
+
+
+  ::-webkit-scrollbar-track:vertical {
+
+    background: linear-gradient(90deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-track:horizontal {
+
+    background: linear-gradient(180deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-thumb {
+
+    background-color: #eee;
+
+    border: 1px solid #8e8f8f;
+
+    border-radius: 3px;
+
+    box-shadow: inset 0 -1px 1px hsla(0, 0%, 100%, .8), inset 0 1px 1px #fff
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:vertical {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAIAAADpZ+PpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADrSURBVChTTc5LboJQGAXguyoCu4ERCzAGlRk7UOwGWIDh0s4M4kxb06RSq/jAB6AxJkJ4lTDrue3AnvyzP+fLId+/yfM8juP7PQmCCOf7B3e+ZD+O40RRVFW12VQUpd3r9U3T2m4OpKoqWZYNwzBZLEqfh0N7NnvfrPcEWlEUWZb9mWF4Ph6D0ylcLbfM5HkeJrhGA2hb15/QXnv+w7RYXsDatjOdvnmrHSnLEizMNE2v11sUXQBCnn98kbquBUGQJAlmq9WB2e3qg4HJdqKkaRql1HGc0WgMcDJ5dd0F24kediZJ8t/ELT69H+8py0CYSIO5AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(90deg, #eee 45%, #ddd 0, #bbb)
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:horizontal {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAYAAAALpr0TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADcSURBVChTNZBLqoUwEEQrURQUxZGCvy24ACfiityJi7tv8GauQoPxk5tquA2RQ9vVVYk6z9NZaxFFEe77htYazjk8z4MwDIVZ+rourOuKaZrwvi+WZcE8z1BKCbPPCjk4DAO2bRP1OI7wLiL6Mbd7J408z1GWpQwWRYGqqiQG+03TgMu0MacfUN4qANmn8UOv9MjW3sKaSm7iIdOSlziOQ3LScd93aPonSYK6riVLlmVo21aYfVqzND9pmqLrOlGT+76XbcxLZkb19/l3fEP+oF0cx8KMEASBsDEGX2/CgZCHkg+8AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(180deg, #eee 45%, #ddd 0, #bbb)
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:hover:vertical {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAIAAADpZ+PpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADrSURBVChTTc5LboJQGAXguyoCu4ERCzAGlRk7UOwGWIDh0s4M4kxb06RSq/jAB6AxJkJ4lTDrue3AnvyzP+fLId+/yfM8juP7PQmCCOf7B3e+ZD+O40RRVFW12VQUpd3r9U3T2m4OpKoqWZYNwzBZLEqfh0N7NnvfrPcEWlEUWZb9mWF4Ph6D0ylcLbfM5HkeJrhGA2hb15/QXnv+w7RYXsDatjOdvnmrHSnLEizMNE2v11sUXQBCnn98kbquBUGQJAlmq9WB2e3qg4HJdqKkaRql1HGc0WgMcDJ5dd0F24kediZJ8t/ELT69H+8py0CYSIO5AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(90deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:hover:horizontal {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAYAAAALpr0TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADcSURBVChTNZBLqoUwEEQrURQUxZGCvy24ACfiityJi7tv8GauQoPxk5tquA2RQ9vVVYk6z9NZaxFFEe77htYazjk8z4MwDIVZ+rourOuKaZrwvi+WZcE8z1BKCbPPCjk4DAO2bRP1OI7wLiL6Mbd7J408z1GWpQwWRYGqqiQG+03TgMu0MacfUN4qANmn8UOv9MjW3sKaSm7iIdOSlziOQ3LScd93aPonSYK6riVLlmVo21aYfVqzND9pmqLrOlGT+76XbcxLZkb19/l3fEP+oF0cx8KMEASBsDEGX2/CgZCHkg+8AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(180deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:active:vertical {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAIAAADpZ+PpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADrSURBVChTTc5LboJQGAXguyoCu4ERCzAGlRk7UOwGWIDh0s4M4kxb06RSq/jAB6AxJkJ4lTDrue3AnvyzP+fLId+/yfM8juP7PQmCCOf7B3e+ZD+O40RRVFW12VQUpd3r9U3T2m4OpKoqWZYNwzBZLEqfh0N7NnvfrPcEWlEUWZb9mWF4Ph6D0ylcLbfM5HkeJrhGA2hb15/QXnv+w7RYXsDatjOdvnmrHSnLEizMNE2v11sUXQBCnn98kbquBUGQJAlmq9WB2e3qg4HJdqKkaRql1HGc0WgMcDJ5dd0F24kediZJ8t/ELT69H+8py0CYSIO5AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(90deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-thumb:active:horizontal {
+
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAYAAAALpr0TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADcSURBVChTNZBLqoUwEEQrURQUxZGCvy24ACfiityJi7tv8GauQoPxk5tquA2RQ9vVVYk6z9NZaxFFEe77htYazjk8z4MwDIVZ+rourOuKaZrwvi+WZcE8z1BKCbPPCjk4DAO2bRP1OI7wLiL6Mbd7J408z1GWpQwWRYGqqiQG+03TgMu0MacfUN4qANmn8UOv9MjW3sKaSm7iIdOSlziOQ3LScd93aPonSYK6riVLlmVo21aYfVqzND9pmqLrOlGT+76XbcxLZkb19/l3fEP+oF0cx8KMEASBsDEGX2/CgZCHkg+8AAAAAElFTkSuQmCC") 50% no-repeat, linear-gradient(180deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-button:horizontal:end:decrement,
+
+  ::-webkit-scrollbar-button:horizontal:start:increment,
+
+  ::-webkit-scrollbar-button:vertical:end:decrement,
+
+  ::-webkit-scrollbar-button:vertical:start:increment {
+
+    display: none
+
+  }
+
+
+  ::-webkit-scrollbar-button {
+
+    border: 1px solid transparent
+
+  }
+
+
+  ::-webkit-scrollbar-button:vertical {
+
+    height: 17px
+
+  }
+
+
+  ::-webkit-scrollbar-button:vertical:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik04IDZIN3YxSDZ2MUg1djFINHYxaDdWOWgtMVY4SDlWN0g4VjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-button:vertical:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik0xMSA2SDR2MWgxdjFoMXYxaDF2MWgxVjloMVY4aDFWN2gxVjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-button:horizontal {
+
+    width: 16px
+
+  }
+
+
+  ::-webkit-scrollbar-button:horizontal:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik05IDRIOHYxSDd2MUg2djFINXYxaDF2MWgxdjFoMXYxaDFWNFoiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4="), linear-gradient(180deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-button:horizontal:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik03IDRINnY3aDF2LTFoMVY5aDFWOGgxVjdIOVY2SDhWNUg3VjRaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(180deg, #e5e5e5, #f0f0f0 20%)
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover {
+
+    background-color: #eee;
+
+    border-color: #8e8f8f;
+
+    border-radius: 3px;
+
+    box-shadow: inset 0 -1px 1px hsla(0, 0%, 100%, .8), inset 0 1px 1px #fff
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:vertical {
+
+    height: 17px
+
+  }
+
+
+::-webkit-scrollbar-button:hover:vertical:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik04IDZIN3YxSDZ2MUg1djFINHYxaDdWOWgtMVY4SDlWN0g4VjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:vertical:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik0xMSA2SDR2MWgxdjFoMXYxaDF2MWgxVjloMVY4aDFWN2gxVjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:horizontal {
+
+    width: 16px
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:horizontal:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik05IDRIOHYxSDd2MUg2djFINXYxaDF2MWgxdjFoMXYxaDFWNFoiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4="), linear-gradient(180deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-button:hover:horizontal:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik03IDRINnY3aDF2LTFoMVY5aDFWOGgxVjdIOVY2SDhWNUg3VjRaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(180deg, #e5f4fd 45%, #b3e0f9 0);
+
+    border-color: #3c7fb1
+
+  }
+
+
+  ::-webkit-scrollbar-button:active {
+
+    background-color: #eee;
+
+    border-color: #8e8f8f;
+
+    border-radius: 3px;
+
+    box-shadow: inset 0 -1px 1px hsla(0, 0%, 100%, .8), inset 0 1px 1px #fff
+
+  }
+
+
+  .contact,
+
+  .contact .inner,
+
+  nav,
+
+  nav .links li a:not([title~=Notifications]) {
+
+    box-shadow: 0 0 0px .0px #fff
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:vertical {
+
+    height: 17px
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:vertical:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik04IDZIN3YxSDZ2MUg1djFINHYxaDdWOWgtMVY4SDlWN0g4VjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:vertical:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik0xMSA2SDR2MWgxdjFoMXYxaDF2MWgxVjloMVY4aDFWN2gxVjZaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(90deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:horizontal {
+
+    width: 16px
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:horizontal:start {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik05IDRIOHYxSDd2MUg2djFINXYxaDF2MWgxdjFoMXYxaDFWNFoiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4="), linear-gradient(180deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+
+
+  ::-webkit-scrollbar-button:active:horizontal:end {
+
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJhIiB4MT0iMCUiIHkxPSIxMDAlIiB4Mj0iMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzMzMztzdG9wLW9wYWNpdHk6MSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYTtzdG9wLW9wYWNpdHk6MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik03IDRINnY3aDF2LTFoMVY5aDFWOGgxVjdIOVY2SDhWNUg3VjRaIiBmaWxsPSJ1cmwoI2EpIi8+PC9zdmc+"), linear-gradient(180deg, #cee9f8 45%, #86c6e8 0);
+
+    border-color: #6d91ab
+
+  }
+/*** SCROLLBAR END ***/
+a {
+  cursor: crosshair;
+}
+				@font-face {
+   font-family: MS Gothic;
+   src: url(https://file.garden/ZkBMEUcxSy6EAJ37/web/MS-Gothic.woff);
+}
+				@font-face {
+   font-family: Sir Clive the Bold;
+   src: url(https://file.garden/ZkBMEUcxSy6EAJ37/web/SIRCLIVETHEBOLD.woff);
+}
+b {
+font-family: Sir Clive the Bold;
+font-size: 15px;
+letter-spacing: 1px;
+}
+
+	body {
+	font-smooth: never;
+    overflow-x: hidden;
+    background-color: #000000;
+    line-height: 0px;
+padding: 0px;
+word-spacing: -12px;
+}
+
+			::-moz-selection { 
+  color: #000000;
+  background: #ffffff;
+}
+	::selection {
+  color: #000000;
+  background: #ffffff;
+}
+
+ul {
+list-style: square inside;
+padding: 0px;
+margin: 0px;
+width: 138px;
+height: 71px;
+margin-left: 13px;
+}
+
+                  .indx  {
+                width: 800px;
+		height: 760px;
+padding: 0px;
+margin: 0px;
+margin-top: -3px;
+margin-left: -8px;
+overflow: visible;
+}
+
+.parent {
+display: flex;
+position: absolute;
+height: 356px;
+top: 27px;
+left: 365px;
+z-index: 69;
+margin: 8px;
+padding: 8px;
+line-height: 6px;
+gap: 8px;
+}
+
+.box2 {
+background-color: #000000;
+border: solid 1px #ffffff;
+width: 201px;
+height: 356px;
+padding: 0px;
+margin: 0px;
+}
+.box1 {
+background-color: #000000;
+border: solid 1px #ffffff;
+width: 201px;
+height: 316px;
+padding: 0px;
+margin: 0px;
+}
+.scroll {
+overflow-y: auto;
+  overflow-x: hidden;
+  width: 182px;
+  text-wrap: wrap;
+  line-height: 14px;
+  word-spacing: 1px;
+  font-size: 12px;
+  padding: 9px;
+  text-align: justify;
+}
+
+.header {
+margin-top: -1px;
+}
+
+a:link {
+  color: #beff02;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #beff02;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #5c5b6a;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  color: #5c5b6a;
+  background-color: transparent;
+  text-decoration: none;
+}
+no {
+color: #beff02
+}
+
+	</style>
+<title>XEN_NTWK</title>
+<link rel="icon" type="image/x-icon" href="img/xen/fav.ico">
+</head>
+<body  font face="MS Gothic">
+<div class="indx">
+<a href="index.html">
+<img draggable="false" (dragstart)="false;"  src="img/bk.png">
+</a>
+<img align="right" draggable="false" (dragstart)="false;"  src="img/xen/indxcr.png">
+<br>
+<img draggable="false" (dragstart)="false;"  src="img/xen/indx.png">
+</div>
+<div class="parent">
+<div class="box1">
+<div class="header">
+<img draggable="false" (dragstart)="false;"  src="img/xen/indx1.png">
+</div>
+<div class="scroll" style="height: 290px;">
+<font face="MS Gothic" color="#ffffff">
+welcome to xen network, a fanlisting collective owned and maintained by soap.
+<br>
+<br>
+the namesake comes from the <a target="_blank" href="https://combineoverwiki.net/wiki/Xen">half-life location</a> of the same name.
+<br>
+<br>
+<img align="right" draggable="false" (dragstart)="false;"  src="img/xen/brd1.png">
+<br>
+<b>
+STATS
+</b>
+<br>
+<br>
+<ul>
+<li>
+xen currently hosts <no>01</no> listing.
+</li>
+<li>
+i have joined/applied to <no>44</no> listings.
+</li>
+<li>
+last updated on <no>00/00/2026</no>.
+</li>
+</ul>
+<br>
+<br>
+<img align="right" draggable="false" (dragstart)="false;"  src="img/xen/brd2.png">
+<br>
+<b>BUTTONS</b>
+<br>
+<br>
+please link back <a href="https://soap1.0000004.xyz/xen">here</a>. no hotlinking.
+<br>
+<br>
+<div align="center">
+<img src="img/xen/banners/50x50xen.png">
+<img src="img/xen/banners/75x50xen.png">
+<br>
+<img src="img/xen/banners/50x50xen1.png">
+<img src="img/xen/banners/75x50xen1.png">
+</div>
+<br>
+<br>
+<img align="right" draggable="false" (dragstart)="false;"  src="img/xen/brd4.png">
+<br>
+<b>AFFILIATES</b>
+<br>
+<br>
+i currently have no affiliates. have a collective? interested in affiliating with xen? <a target="_blank" href="mailto:isanimeoveryet@protonmail.com">email me</a>!!
+<br>
+<br>
+<img align="right" draggable="false" (dragstart)="false;"  src="img/xen/brd3.png">
+<br>
+<div align="center">
+<a href="https://thefanlistings.org/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/banners/tfl4.gif">
+</a>
+<br>
+<a href="https://www.animefanlistings.com/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/banners/tafl1.gif">
+</div>
+</font>
+</div>
+</div>
+<div class="box2">
+<div class="header">
+<img draggable="false" (dragstart)="false;"  src="img/xen/indx2.png">
+</div>
+<div class="scroll" style="height: 330px;">
+<font face="MS Gothic" color="#ffffff">
+
+<b>OWNED</b>
+<br>
+<br>
+<a href="xen/halflife/index.html" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="xen/halflife/img/codes/50x50l3.png">
+</a>
+more to come...
+<br>
+<br>
+<img align="right" draggable="false" (dragstart)="false;"  src="img/xen/brd3.png">
+<br>
+<b>JOINED | PENDING</b>
+<br>
+<br>
+<a href="https://silent.am/drawing/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flart.png">
+</a>
+<a href="https://fan.enamour.nu/web/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flweb.png">
+</a>
+<a href="https://humanfinny.neocities.org/fanlistings/fanlisting_2000s" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/fl00s.png">
+</a>
+<a href="https://movieloverfls.org/musicof1990s/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/fl90s.png">
+</a>
+<a href="https://fan.yahuh.co/edm/about.php" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/fledm.png">
+</a>
+<a href="https://bjork.allneonlike.org/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flbjork.png">
+</a>
+<a href="https://fanlistings.melankorin.net/radiohead/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flrh.png">
+</a>
+<a href="https://slytherins.com/fan/green/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flgeen.png">
+</a>
+<a href="https://aerofanlisting.nekoweb.org/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flaero.png">
+</a>
+<a href="https://shadow-lord.com/alien/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flal79.png">
+</a>
+<a href="https://imaginary.nu/alien/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flalien.png">
+</a>
+<a href="https://fan.redcrown.net/fallout/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flfall.png">
+</a>
+<a href="https://midnight-cloud.net/fan/gaia/portal2/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flp2.png">
+</a>
+<a href="https://imaginary.nu/l4d2/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/fll4d2.png">
+</a>
+<a href="https://fan.shinshoku.net/district9/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/fld9.png">
+</a>
+<a href="https://silent.am/cyberpunk/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flcyb.png">
+</a>
+<a href="https://silent.am/ps2/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flps2.png">
+</a>
+<a href="https://endlessness.nu/xbox/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flxbox.png">
+</a>
+<a href="http://fan.greenhype.net/winamp/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flwin.png">
+</a>
+<a href="http://fan.greenhype.net/wskins/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flwskin.png">
+</a>
+<a href="https://in-blue-rain.org/attached/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flkey.png">
+</a>
+<a href="https://fan.i-heart-you.net/stickers/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flstck.png">
+</a>
+<a href="http://lain.angelic-trust.net/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/fllain.png">
+</a>
+<a href="https://fan.enamour.nu/nge/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flnge.png">
+</a>
+<a href="https://michiru.org/bebop/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flbebop.png">
+</a>
+<a href="https://www.into-a-dream.com.ar/terminator/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flterm.png">
+</a>
+<a href="https://imaginary.nu/thing/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flthing.png">
+</a>
+<a href="https://www.ladyrose.buruma.net/gorillaz/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flgz.png">
+</a>
+<a href="http://hellokitty.ravenbeauty.net/badtz-maru/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flbz.png">
+</a>
+<a href="https://endlessness.nu/splatoon/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flsplt.png">
+</a>
+<a href="https://noble-scarlet.net/monsterhigh/dolls/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flmh.png">
+</a>
+<a href="https://ladyrose.buruma.net/futurama/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flfutur.png">
+</a>
+<a href="https://fan.redcrown.net/katamari/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flka.png">
+</a>
+<a href="https://fanlistings.melankorin.net/vocaloid/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flvl.png">
+</a>
+<a href="https://fan.enamour.nu/graphic/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flgrap.png">
+</a>
+<a href="https://online.thoughtdreams.org/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flshp.png">
+</a>
+<a href="https://gryffindors.com/sarina/web/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flsurf.png">
+</a>
+<a href="https://powerup.i-heart-you.net/gaming/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flgame.png">
+</a>
+<a href="https://glitterskies.org/steam/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flsteam.png">
+</a>
+<a href="https://lost-boy.org/mm/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flmajora.png">
+</a>
+<a href="https://fans.thislove.nu/mozilla/index.php" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flfox.png">
+</a>
+<a href="https://silent.am/pixelart/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flpx.png">
+</a>
+<a href="https://imaginary.nu/deadspace/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flds.png">
+</a>
+<a href="https://silenthill.nu/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/flsh.png">
+</a>
+<br>
+<br>
+<img align="right" draggable="false" (dragstart)="false;"  src="img/xen/brd2.png">
+<br>
+<b>GRAVEYARD</b>
+<br>
+<br>
+<a href="https://web.archive.org/web/20070205064332/http://www.enter.net/~stolikmc/junko1.htm" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/ripjm.png">
+</a>
+<a href="https://web.archive.org/web/20060614201612/http://www.soul-reply.net/operative/index.php" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/ripos.png">
+</a>
+<a href="https://web.archive.org/web/20220930070017/https://fl.hrzblt.eu/soma/index.php" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/ripsoma.png">
+<a href="https://web.archive.org/web/20160409064905/http://fan.precise-poetry.net/perfume/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/ripperfume.png">
+<a href="https://web.archive.org/web/20240422212739/https://hoshi.nu/twilight/" target="_blank">
+<img draggable="false" (dragstart)="false;"  src="img/xen/fanlist/riptp.png">
+</a>
+</a>
+</font>
+</div>
+</div>
+</div>
+</body>
+</html>
