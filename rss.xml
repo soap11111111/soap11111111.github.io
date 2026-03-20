@@ -16,5 +16,12 @@
       <link>https://soap1.0000004.xyz</link>
       <description><![CDATA[soap1 is up, but still under major construction. missing pages are as follows: about, blog, mixtapes, wardrobe.]]></description>
     </item>
+
+        <item>
+      <title>03 | 19 | 2026</title>
+      <pubDate>Mon, 19 Mar 2026 00:00:00 -0800</pubDate>
+      <link>https://soap1.0000004.xyz</link>
+      <description><![CDATA[guestbook added.]]></description>
+    </item>
   </channel>
 </rss>
