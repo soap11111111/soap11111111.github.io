@@ -1,0 +1,10 @@
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https://(www\.)?soap11111111.github.io/.*$ [NC]
+RewriteRule \.(jpg|jpeg|gif|png|bmp|webp)$ https://soap11111111.github.io/img/hl.gif[R,L]
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https://(www\.)?web.archive.org/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^https://(www\.)?archive.today/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^https://(www\.)?archive.is/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^https://(www\.)?ghostarchive.org/.*$ [NC]
+RewriteRule \.(jpg|jpeg|gif|png|bmp|webp)$ - [F]
