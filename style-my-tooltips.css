@@ -1,0 +1,17 @@
+#s-m-t-tooltip   
+{
+max-width:300px;
+padding:5px;
+margin:20px 7px -2px 20px;
+background-color: rgba(0, 0, 0, 0.4);
+backdrop-filter: blur(3px);
+border:1px solid white;
+color:#fff;
+letter-spacing:1px;
+text-align:center;
+text-shadow: -1px -1px 0 #000000, -0px -1px 0 #000000, -1px -0px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000, 2px 2px 0 #000000, 0px 2px 0 #000000, 2px 0px 0 #000000, 1px 2px 0 #000000, 2px 1px 0 #000000;
+z-index:9;
+-o-transition: all 0.1s ease-out;
+-webkit-transition: all 0.1s ease-out;
+-moz-transition: all 0.1s ease-out;
+}
