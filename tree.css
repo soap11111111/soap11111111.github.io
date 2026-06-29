@@ -1,0 +1,129 @@
+
+:root {
+  --w7-tvb-size: 9px; /* tvb = treeview button */
+  --w7-tv-left: 20px;
+}
+summary {
+    font-family: Sir Clive the Bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    cursor: crosshair;
+    list-style-type: none;
+}
+
+#inl {
+    margin-left: -20px;
+}
+
+
+ul.bttn-tree-view {
+  display: block;
+  margin: 0px;
+  margin-top: -1px;
+  margin-left: -1px;
+  padding: 0px;
+
+  li {
+    list-style-type: none;
+    margin-top: 4px;
+    position: relative;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    margin-top: 4px;
+    padding-left: 0px;
+
+  }
+
+  &.has-collapse-button details {
+    > summary {
+      &::-webkit-details-marker,
+      &::marker {
+        display: none;
+      }
+
+      &::before {
+        content: url("https://soap11111111.github.io/img/op.png");
+        position: relative;
+        padding-left: 10px;
+        left: -4px;
+        width: 9px;
+        height: 9px;
+      }
+    }
+
+
+ul.tree-view {
+  display: block;
+  margin: 0px;
+  margin-top: -10px;
+  margin-left: -25px;
+  padding: 6px 6px 6px var(--w7-tv-left);
+
+  li {
+    list-style-type: none;
+    margin-top: 4px;
+    position: relative;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    margin-top: 4px;
+    padding-left: var(--w7-tv-left);
+
+  }
+
+  &.has-collapse-button details {
+    > summary {
+      &::-webkit-details-marker,
+      &::marker {
+        display: none;
+      }
+
+      &::before {
+        content: url("https://soap11111111.github.io/img/op.png");
+        position: relative;
+        padding-left: 10px;
+        left: -4px;
+        width: 9px;
+        height: 9px;
+      }
+    }
+
+    &[open] > summary::before {
+      content: url("https://soap11111111.github.io/img/cl.png");
+      transform: none;
+    }
+  }
+
+  &.has-connector {
+    ul {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: var(--w7-tvb-size);
+        height: calc(99% + var(--w7-tvb-size) / 1.1);
+        border-left: 1px dotted #5c5b6a;
+      }
+      
+      li::before {
+        content: "";
+        position: absolute;
+        top: var(--w7-tvb-size);
+        right: calc(100% + var(--w7-tvb-size) / 6);
+        width: calc(var(--w7-tv-left) / 2);
+        border-bottom: 1px dotted #5c5b6a;
+      }
+    }
+  }
+}
