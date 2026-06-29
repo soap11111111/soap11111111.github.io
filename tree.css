@@ -16,47 +16,6 @@ summary {
 }
 
 
-ul.bttn-tree-view {
-  display: block;
-  margin: 0px;
-  margin-top: -1px;
-  margin-left: -1px;
-  padding: 0px;
-
-  li {
-    list-style-type: none;
-    margin-top: 4px;
-    position: relative;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  ul {
-    margin-top: 4px;
-    padding-left: 0px;
-
-  }
-
-  &.has-collapse-button details {
-    > summary {
-      &::-webkit-details-marker,
-      &::marker {
-        display: none;
-      }
-
-      &::before {
-        content: url("https://soap11111111.github.io/img/op.png");
-        position: relative;
-        padding-left: 10px;
-        left: -4px;
-        width: 9px;
-        height: 9px;
-      }
-    }
-
-
 ul.tree-view {
   display: block;
   margin: 0px;
