@@ -54,6 +54,10 @@ ul.bttn-tree-view {
         width: 9px;
         height: 9px;
       }
+          &[open] > summary::before {
+      content: url("https://soap11111111.github.io/img/cl.png");
+      transform: none;
+    }
     }
   &.has-connector {
     ul {
