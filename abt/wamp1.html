@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="scroll2.css">
+<style>
+a {
+  cursor: crosshair;
+}
+	body {
+	font-smooth: never;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: #000000;
+    font-size: 12px;
+	image-rendering: pixelated;
+}
+			::-moz-selection { 
+  color: #000000;
+  background: #ffffff;
+}
+	::selection {
+  color: #000000;
+  background: #ffffff;
+}
+#app {
+position: absolute;
+top: -1px;
+left: 0px;
+z-index: 0;
+cursor: default;
+}
+.disable {
+position: absolute;
+z-index: 99999;
+cursor: default;
+width: 111px;
+height: 18px;
+top: 0px;
+left: 0px;
+}
+
+.actions, .windows, .mono-stereo {
+cursor: crosshair;
+}
+
+	</style>
+<title>ABOUT \ SOAP1_ONLiNE</title>
+<link rel="icon" type="image/x-icon" href="http://soap11111111.github.io/img/fav.ico">
+</head>
+  <body>
+<div class="disable">
+&nbsp;
+</div>
+    <div id="app">
+    </div>
+    <script type="module">
+      import Webamp from "https://unpkg.com/webamp@^2";
+const webamp = new Webamp({
+  initialTracks: [
+    {
+      url: "https://soap11111111.github.io/filez/list1/1.mp3",
+      metaData: {
+        artist: "ECCO2K",
+        title: "PXE",
+      },
+      duration: 77,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/2.mp3",
+      metaData: {
+        artist: "BJÖRK",
+        title: "5 YEARS",
+      },
+      duration: 269,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/3.mp3",
+      metaData: {
+        artist: "BLACK DRESSES",
+        title: "NAUSEA 2019",
+      },
+      duration: 166,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/4.mp3",
+      metaData: {
+        artist: "APHEX TWIN",
+        title: "FENIXFUNK 5",
+      },
+      duration: 301,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/5.mp3",
+      metaData: {
+        artist: "A.G. COOK",
+        title: "NU CRUSH",
+      },
+      duration: 198,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/6.mp3",
+      metaData: {
+        artist: "PROLAPS",
+        title: "INTERNAL ALCHEMY",
+      },
+      duration: 885,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/7.mp3",
+      metaData: {
+        artist: "SQUAREPUSHER",
+        title: "DO YOU KNOW SQUAREPUSHER",
+      },
+      duration: 305,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/8.mp3",
+      metaData: {
+        artist: "VENETIAN SNARES",
+        title: "EPIDERMIS",
+      },
+      duration: 282,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/9.mp3",
+      metaData: {
+        artist: "DEATH GRIPS",
+        title: "PUNK WEIGHT",
+      },
+      duration: 204,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/10.mp3",
+      metaData: {
+        artist: "TREEHOLDER/AYMANTIUM",
+        title: "HYPER",
+      },
+      duration: 127,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/11.mp3",
+      metaData: {
+        artist: "ARCA",
+        title: "SLIT THRU",
+      },
+      duration: 132,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/12.mp3",
+      metaData: {
+        artist: "AUTECHRE",
+        title: "ELSEQ 1",
+      },
+      duration: 751,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/13.mp3",
+      metaData: {
+        artist: "APHEX TWIN",
+        title: "∆Mᵢ⁻¹=−α ∑ Dᵢ[η][ ∑ Fjᵢ[η−1]+FEXTᵢ [η⁻¹]]",
+      },
+      duration: 331,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/14.mp3",
+      metaData: {
+        artist: "COBRAH",
+        title: "ICON",
+      },
+      duration: 144,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/15.mp3",
+      metaData: {
+        artist: "DEATH GRIPS",
+        title: "TRACK 1",
+      },
+      duration: 290,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/16.mp3",
+      metaData: {
+        artist: "ARCA",
+        title: "GET OUT THE FUCKING CAR",
+      },
+      duration: 196,
+    },
+    {
+      url: "https://soap11111111.github.io/filez/list1/17.mp3",
+      metaData: {
+        artist: "SOPHIE",
+        title: "WHOLE NEW WORLD/PRETEND WORLD",
+      },
+      duration: 546,
+    },
+  ],
+  initialSkin: {
+    url: "https://soap11111111.github.io/filez/skin1.wsz",
+  },
+  windowLayout: {
+    main: {
+      position: { bottom: 1, left: 0 },
+      shadeMode: true,
+      closed: false,
+    },
+    equalizer: {
+      position: { top: 0, left: 0 },
+      shadeMode: true,
+      closed: true,
+    },
+    playlist: {
+      position: { top: 0, left: 0 },
+      shadeMode: true,
+      closed: true,
+    },
+  },
+});
+      webamp.renderWhenReady(document.getElementById("app"));
+    </script>
+  </body></html>
