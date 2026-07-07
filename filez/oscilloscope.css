@@ -1,0 +1,6 @@
+.oscilloscope__wave {
+	fill: none;
+
+    stroke: #ffffff;
+    stroke-width: 2px;
+}
