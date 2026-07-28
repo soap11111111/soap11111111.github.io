@@ -12,49 +12,76 @@ scrollbar-width: thin;
   width: 16px;
   height: 16px;
   background: none;
-}
+  }
 ::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-button {
   width: 16px;
   height: 16px;
-  background: silver;
-  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px gray;
-  border: 1px solid;
-  border-color: silver #000 #000 silver;
+  background: #ffffff;
+  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #c0c0c0;
+  border: 1px solid #000000;
 }
 
 ::-webkit-scrollbar-track {
   image-rendering: optimizeSpeed;
   image-rendering: pixelated;
   image-rendering: optimize-contrast;
-  background: #696969;
-  background-image: url("https://soap11111111.github.io/img/trk.svg");
+  background: #c0c0c0;
+  background-image: url("https://soap11111111.github.io/xen/grimes/img/trk.svg");
   background-position: 0 0;
   background-repeat: repeat;
   background-size: 2px;
+  border-top: 1px solid #000000;
 }
 
-::-webkit-scrollbar-button {
-  background-repeat: no-repeat;
-  background-size: 16px;
-}
+
 
 ::-webkit-scrollbar-button:single-button:vertical:decrement {
   background-image: url("https://soap11111111.github.io/xen/grimes/img/awtp.svg");
+  background-size: 16px;
+  image-rendering: optimizeSpeed;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+  background-repeat: no-repeat;
+background-position: -1px 0px;
 }
 
 ::-webkit-scrollbar-button:single-button:vertical:increment {
   background-image: url("https://soap11111111.github.io/xen/grimes/img/awbt.svg");
+  background-size: 16px;
+  image-rendering: optimizeSpeed;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+  background-repeat: no-repeat;
+background-position: -1px 0px;
 }
 
 ::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    background: #ffffff;
+  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #c0c0c0;
+  border: 1px solid #000000;
   background-image: url("https://soap11111111.github.io/xen/grimes/img/awl.svg");
+  background-size: 16px;
+  image-rendering: optimizeSpeed;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+  background-repeat: no-repeat;
+background-position: -1px 0px;
 }
 ::-webkit-scrollbar-button:single-button:horizontal:increment {
+    background: #ffffff;
+  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #c0c0c0;
+  border: 1px solid #000000;
   background-image: url("https://soap11111111.github.io/xen/grimes/img/awr.svg");
+  background-size: 16px;
+  image-rendering: optimizeSpeed;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+  background-repeat: no-repeat;
+background-position: -1px 0px;
 }
 
 ::-webkit-scrollbar-corner {
-  background: silver;
+  background: #c0c0c0;
 }
 
 /* dakedres was here ;3 */
