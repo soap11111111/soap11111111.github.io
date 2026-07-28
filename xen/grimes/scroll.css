@@ -1,3 +1,14 @@
+@supports (-moz-appearance:none) {
+html {
+scrollbar-color: #ffffff #000000;
+    scrollbar-width: thin;
+}
+div {
+scrollbar-color: #ffffff #000000;
+scrollbar-width: thin;
+}
+  }
+
 body *::-webkit-scrollbar {
   width: 16px;
   height: 16px;
