@@ -10,18 +10,18 @@ scrollbar-width: thin;
   }
 
 /*** SCROLLBAR START ***/
-body *::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 12px;
   height: 12px;
   background: none;
 }
-body *::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   border-top: 1px solid #ffffff;
   border-left: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
 }
 
-body *::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-button {
+::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-button {
   image-rendering: optimizeSpeed;
   image-rendering: pixelated;
   image-rendering: optimize-contrast;
@@ -33,7 +33,7 @@ body *::-webkit-scrollbar-thumb, body *::-webkit-scrollbar-button {
   background-position: 50%;
 }
 
-body *::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   image-rendering: optimizeSpeed;
   image-rendering: pixelated;
   image-rendering: optimize-contrast;
@@ -43,8 +43,7 @@ body *::-webkit-scrollbar-track {
   background-repeat: repeat;
   background-size: 2px;
 }
-
-body *::-webkit-scrollbar-button {
+::-webkit-scrollbar-button {
     image-rendering: optimizeSpeed;
   image-rendering: pixelated;
   image-rendering: optimize-contrast;
@@ -52,33 +51,31 @@ body *::-webkit-scrollbar-button {
   background-size: 16px;
 background-position: -2px -2px;
 }
-
-body *::-webkit-scrollbar-button:single-button:vertical:decrement {
+::-webkit-scrollbar-button:single-button:vertical:decrement {
   background-image: url("https://soap11111111.github.io/img/awtp.svg");
   border-left: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
 }
 
-body *::-webkit-scrollbar-button:single-button:vertical:increment {
+::-webkit-scrollbar-button:single-button:vertical:increment {
   background-image: url("https://soap11111111.github.io/img/awbt.svg");
 border-top: 1px solid #ffffff;
   border-left: 1px solid #ffffff;
 }
-
-body *::-webkit-scrollbar-button:single-button:horizontal:decrement {
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
   background-image: url("https://soap11111111.github.io/img/awl.svg");
   border-top: 1px solid #ffffff;
   border-left: 1px solid #ffffff;
   border-right: 1px solid #ffffff;
 }
 
-body *::-webkit-scrollbar-button:single-button:horizontal:increment {
+::-webkit-scrollbar-button:single-button:horizontal:increment {
   background-image: url("https://soap11111111.github.io/img/awr.svg");
   border-top: 1px solid #ffffff;
   border-left: 1px solid #ffffff;
   border-right: 1px solid #ffffff;
 
-body *::-webkit-scrollbar-corner {
+    ::-webkit-scrollbar-corner {
   background: #ffffff;
 }
 
