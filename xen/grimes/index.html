@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://soap11111111.github.io/xen/grimes/scroll.css"><style>
+.parent {
+width: 800px;
+    height: 576px;
+display: grid;
+  grid-template-columns: 800px;
+  grid-template-rows: 334px 35px 183px 21px;
+  gap: 1px 0px;
+    grid-template-areas: 
+    "hdr"
+    "top"
+    "iframe"
+    "bot"; 
+border: 1px solid #ffffff;
+padding: 1px;
+}
+
+
+.hdr {
+grid-area: hdr;
+background-image: url("https://soap11111111.github.io/xen/grimes/img/bg.png");
+background-repeat: no-repeat;
+overflow: hidden;
+}
+
+.top {
+grid-area: top;
+background-image: url("https://soap11111111.github.io/xen/grimes/img/top.png");
+overflow: hidden;
+}
+
+.iframe {
+grid-area: iframe;
+}
+
+#box {
+  width: 100%; 
+  height: 100%; 
+}
+
+.bot {
+grid-area: bot;
+background-color: #ffffff;
+letter-spacing: -8px;
+overflow: hidden;
+}
+
+a {
+  cursor: crosshair;
+}
+				@font-face {
+   font-family: NEC MultiSpeed;
+   src: url(https://soap11111111.github.io/filez/necmultispeed.woff);
+}
+				@font-face {
+   font-family: Sharp PC3K;
+   src: url(https://soap11111111.github.io/filez/sharppc3k.woff);
+}
+
+	body {
+	font-smooth: never;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #000000;
+    font-size: 8px;
+	image-rendering: pixelated;
+font-family: Sharp PC3K;
+}
+		o {
+  text-shadow: -1px -1px 0 #000000, -0px -1px 0 #000000, -1px -0px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000, 2px 2px 0 #000000, 0px 2px 0 #000000, 2px 0px 0 #000000, 1px 2px 0 #000000, 2px 1px 0 #000000; 
+}
+			::-moz-selection { 
+  color: #000000;
+  background: #ffffff;
+}
+	::selection {
+  color: #000000;
+  background: #ffffff;
+}
+px {
+font-family: NEC MultiSpeed;
+font-size: 8px;
+letter-spacing: 1px;
+}
+
+a:link {
+  color: #ff00f0;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #ff00f0;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #000000;
+  background-color: #ffffff;
+  text-decoration: none;
+}
+a:active {
+  color: #ffffff;
+  background-color: #000000;
+  text-decoration: none;
+}
+.music {
+top: 10px;
+  left: 155px;
+  cursor: default;
+  position: relative;
+  z-index: 69;
+  mix-blend-mode: exclusion;
+  width: 50px;
+  height: 14px;
+  letter-spacing: -2px;
+}
+#theOsc {
+
+}
+	</style>
+<link rel="icon" type="image/x-icon" href="https://soap11111111.github.io/xen/grimes/img/fav.ico">
+<title>WEREGiLD \ XEN_NTWK</title>
+</head>
+<body>
+<div class="parent">
+  <div class="top">
+<div class="music">
+    <audio id="myAudio">
+<source src="https://soap11111111.github.io/filez/weregild.mp3" type="audio/mpeg">
+  </audio>
+<img draggable="false" (dragstart)="false;" style="cursor: crosshair;" src="https://soap11111111.github.io/xen/grimes/img/icopl1.png" style="margin-left: -10px;" onmousedown="this.src='https://soap11111111.github.io/xen/grimes/img/icopl2.png';" onmouseup="this.src='https://soap11111111.github.io/xen/grimes/img/icopl1.png';"/ onclick="document.getElementById('myAudio').play()" name="buttonstart">
+<img draggable="false" (dragstart)="false;" style="cursor: crosshair;" src="https://soap11111111.github.io/xen/grimes/img/icopa1.png" onmousedown="this.src='https://soap11111111.github.io/xen/grimes/img/icopa2.png';" onmouseup="this.src='https://soap11111111.github.io/xen/grimes/img/icopa1.png';"/ onclick="document.getElementById('myAudio').pause()" name="buttonpause">
+
+</div>
+</div>
+  <div class="hdr">
+<canvas id="theOsc" style="background-color: rgba(0, 0, 0, 0); height: 100%; width: 100%; position: relative; top: auto; left: auto; z-index: 420;" width="300" height="300">
+<script>
+var options = {
+	at: "container",
+	type: "oscilloscope",
+	thickness: 1,
+	id: "theOsc",
+	color: "#ff00f0",
+	background: "#000000",
+	fade: 1,
+	fftSize: 2048
+};
+
+var myOscilloscope = new Oscilloscope(options);
+</script>
+</canvas>
+<script src="https://soap11111111.github.io/filez/osc/oscilloscope.js"></script>
+<script src="https://soap11111111.github.io/filez/osc/example.js"></script>
+</div>
+  <div class="topp"></div>
+  <div class="iframe">
+<iframe id="box" name="iframe" src="C:/Users/malom/OneDrive/Documents/webpage/xen/grimes/index1.html" frameborder="0" name="box">
+</iframe>
+</div>
+  <div class="bot">
+<a href="C:/Users/malom/OneDrive/Documents/webpage/xen/grimes/index1.html" target="iframe">
+<img draggable="false" (dragstart)="false;" src="https://soap11111111.github.io/xen/grimes/img/nav1a.png" onmouseover="this.src='https://soap11111111.github.io/xen/grimes/img/nav1b.png';" onmouseout="this.src='https://soap11111111.github.io/xen/grimes/img/nav1a.png';"/>
+</a>
+<a href="C:/Users/malom/OneDrive/Documents/webpage/xen/grimes/abt.html" target="iframe">
+<img draggable="false" (dragstart)="false;" src="https://soap11111111.github.io/xen/grimes/img/nav2a.png" onmouseover="this.src='https://soap11111111.github.io/xen/grimes/img/nav2b.png';" onmouseout="this.src='https://soap11111111.github.io/xen/grimes/img/nav2a.png';"/>
+</a>
+<a href="C:/Users/malom/OneDrive/Documents/webpage/xen/grimes/members.html" target="iframe">
+<img draggable="false" (dragstart)="false;" src="https://soap11111111.github.io/xen/grimes/img/nav3a.png" onmouseover="this.src='https://soap11111111.github.io/xen/grimes/img/nav3b.png';" onmouseout="this.src='https://soap11111111.github.io/xen/grimes/img/nav3a.png';"/>
+</a>
+<a href="C:/Users/malom/OneDrive/Documents/webpage/xen/grimes/join.html" target="iframe">
+<img draggable="false" (dragstart)="false;" src="https://soap11111111.github.io/xen/grimes/img/nav4a.png" onmouseover="this.src='https://soap11111111.github.io/xen/grimes/img/nav4b.png';" onmouseout="this.src='https://soap11111111.github.io/xen/grimes/img/nav4a.png';"/>
+</a>
+<a href="C:/Users/malom/OneDrive/Documents/webpage/xen/grimes/update.html" target="iframe">
+<img draggable="false" (dragstart)="false;" src="https://soap11111111.github.io/xen/grimes/img/nav5a.png" onmouseover="this.src='https://soap11111111.github.io/xen/grimes/img/nav5b.png';" onmouseout="this.src='https://soap11111111.github.io/xen/grimes/img/nav5a.png';"/>
+</a>
+<a href="C:/Users/malom/OneDrive/Documents/webpage/xen/grimes/codes.html" target="iframe">
+<img draggable="false" (dragstart)="false;" src="https://soap11111111.github.io/xen/grimes/img/nav6a.png" onmouseover="this.src='https://soap11111111.github.io/xen/grimes/img/nav6b.png';" onmouseout="this.src='https://soap11111111.github.io/xen/grimes/img/nav6a.png';"/>
+</a>
+<a href="C:/Users/malom/OneDrive/Documents/webpage/xen/grimes/sitely.html" target="iframe">
+<img draggable="false" (dragstart)="false;" src="https://soap11111111.github.io/xen/grimes/img/nav7a.png" onmouseover="this.src='https://soap11111111.github.io/xen/grimes/img/nav7b.png';" onmouseout="this.src='https://soap11111111.github.io/xen/grimes/img/nav7a.png';"/>
+</a>
+</div>
+</div>
+<img draggable="false" (dragstart)="false;" src="https://soap11111111.github.io/xen/grimes/img/cr.png">
+</body>
+</html>
