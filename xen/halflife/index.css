@@ -1,3 +1,14 @@
+@supports (-moz-appearance:none) {
+html {
+scrollbar-color: #ffffff #27301f;
+    scrollbar-width: thin;
+}
+div {
+scrollbar-color: #ffffff #27301f;
+scrollbar-width: thin;
+}
+  }
+
 /*** VGUi.CSS SNiPPETS ***/
 button,
 input[type=button],
