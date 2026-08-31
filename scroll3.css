@@ -1,0 +1,71 @@
+@supports (-moz-appearance:none) {
+html {
+scrollbar-color: #ff0ee04 #000000;
+    scrollbar-width: thin;
+}
+div {
+scrollbar-color: #ff0ee04 #000000;
+scrollbar-width: thin;
+}
+  body {
+scrollbar-color: #ff0ee04 #000000;
+scrollbar-width: thin;
+}
+  }
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 16px;
+  height: 16px;
+  background: #c0c0c0;
+  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #808080;
+  border: 1px solid;
+  border-color: #c0c0c0 #000 #000 #c0c0c0;
+}
+
+ ::-webkit-scrollbar-track {
+  image-rendering: optimizeSpeed;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+  background-image: url("https://soapfriendo.neocities.org/bg.svg");
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: 2px;
+}
+
+::-webkit-scrollbar-button {
+  background-repeat: no-repeat;
+  background-size: 16px;
+    width: 16px;
+  height: 16px;
+  background: #c0c0c0;
+  box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #808080;
+  border: 1px solid;
+  border-color: #c0c0c0 #000 #000 #c0c0c0;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url("https://soapfriendo.neocities.org/t.svg");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url("https://soapfriendo.neocities.org/b.svg");
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  background-image: url("https://soapfriendo.neocities.org/l.svg");
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+  background-image: url("https://soapfriendo.neocities.org/r.svg");
+}
+
+::-webkit-scrollbar-corner {
+  background: #c0c0c0;
+}
+
+/* dakedres was here ;3 */
