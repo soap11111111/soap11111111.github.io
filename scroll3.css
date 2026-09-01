@@ -21,6 +21,7 @@ scrollbar-width: thin;
   box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #808080;
   border: 1px solid;
   border-color: #c0c0c0 #000 #000 #c0c0c0;
+    border-left: 1px solid #000000;
 }
 
  ::-webkit-scrollbar-track {
@@ -31,6 +32,7 @@ scrollbar-width: thin;
   background-position: 0 0;
   background-repeat: repeat;
   background-size: 2px;
+     border-left: 1px solid #000000;
 }
 
 ::-webkit-scrollbar-button {
@@ -42,6 +44,7 @@ scrollbar-width: thin;
   box-shadow: inset 1px 1px #dfdfdf, inset -1px -1px #808080;
   border: 1px solid;
   border-color: #c0c0c0 #000 #000 #c0c0c0;
+    border-left: 1px solid #000000;
 }
 
 ::-webkit-scrollbar-button:single-button:vertical:decrement {
