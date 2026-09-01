@@ -49,18 +49,22 @@ scrollbar-width: thin;
 
 ::-webkit-scrollbar-button:single-button:vertical:decrement {
   background-image: url("https://soapfriendo.neocities.org/t.svg");
+    border-bottom: 1px solid #000000;
 }
 
 ::-webkit-scrollbar-button:single-button:vertical:increment {
   background-image: url("https://soapfriendo.neocities.org/b.svg");
+    border-top: 1px solid #000000;
 }
 
 ::-webkit-scrollbar-button:single-button:horizontal:decrement {
   background-image: url("https://soapfriendo.neocities.org/l.svg");
+    border-right: 1px solid #000000;
 }
 
 ::-webkit-scrollbar-button:single-button:horizontal:increment {
   background-image: url("https://soapfriendo.neocities.org/r.svg");
+    border-left: 1px solid #000000;
 }
 
 ::-webkit-scrollbar-corner {
