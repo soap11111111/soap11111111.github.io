@@ -47,7 +47,7 @@ scrollbar-width: thin;
     height: 18px;
 }
     ::-webkit-scrollbar-button:single-button:active {
-    box-shadow: inset -2px -2px 0px #5c5b6a, inset 2px 2px 0px #fff;
+    box-shadow: inset -2px -2px 0px #fff, inset 2px 2px 0px #5c5b6a;
     }
 
 ::-webkit-scrollbar-button:single-button:vertical:increment {
