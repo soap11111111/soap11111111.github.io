@@ -43,20 +43,20 @@ scrollbar-width: thin;
     }
 
 ::-webkit-scrollbar-button:single-button:vertical:increment {
-            background-image: url("https://file.garden/ZkBMEUcxSy6EAJ37/web/down.png");
+            background-image: url("https://soap11111111.github.io/1/img/down.png");
         }
 
 ::-webkit-scrollbar-button:single-button:vertical:decrement {
-            background-image: url("https://file.garden/ZkBMEUcxSy6EAJ37/web/up.png");
+            background-image: url("https://soap11111111.github.io/1/img/up.png");
         }
     }
 
 ::-webkit-scrollbar-button:single-button:horizontal:decrement {
-            background-image: url("https://file.garden/ZkBMEUcxSy6EAJ37/web/left.png");
+            background-image: url("https://soap11111111.github.io/1/img/left.png");
         }
 
 ::-webkit-scrollbar-button:single-button:horizontal:increment {
-            background-image: url("https://file.garden/ZkBMEUcxSy6EAJ37/web/right.png");
+            background-image: url("https://soap11111111.github.io/1/img/right.png");
         }
     }
 }
