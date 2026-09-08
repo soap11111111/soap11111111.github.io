@@ -38,8 +38,8 @@ scrollbar-width: thin;
     width: 18px;
     height: 18px;
 
-    &:active {
-        @include buttons.buttonShadowInverted;
+    ::-webkit-scrollbar-button:single-button:active {
+    box-shadow: inset -2px -2px 0px #5c5b6a, inset 2px 2px 0px #fff;
     }
 
 ::-webkit-scrollbar-button:single-button:vertical:increment {
