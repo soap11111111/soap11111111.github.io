@@ -14,6 +14,9 @@ scrollbar-width: thin;
 ::-webkit-scrollbar {
     width: 18px;
     height: 18px;
+      image-rendering: optimizeSpeed;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
 }
 ::-webkit-scrollbar-corner {
     background: #C3C7CB;
@@ -37,7 +40,12 @@ scrollbar-width: thin;
     background-position: center;
     width: 18px;
     height: 18px;
-
+    background-repeat: no-repeat;
+    background-position: 50%;
+      background-size: 8px;
+    width: 18px;
+    height: 18px;
+}
     ::-webkit-scrollbar-button:single-button:active {
     box-shadow: inset -2px -2px 0px #5c5b6a, inset 2px 2px 0px #fff;
     }
