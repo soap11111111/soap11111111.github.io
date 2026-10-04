@@ -1,0 +1,474 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://soap11111111.github.io/scroll2.css">
+<style>
+a {
+  cursor: crosshair;
+}
+				@font-face {
+   font-family: Pixelstad;
+   src: url(https://soap11111111.github.io/filez/PIXELSTAD.woff);
+}
+				@font-face {
+   font-family: Visitor;
+   src: url(https://soap11111111.github.io/filez/VISITOR.woff);
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #000000; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000; 
+}
+  ::-webkit-scrollbar:horizontal {
+    height: 4px;
+  }
+	body {
+	font-smooth: never;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #000000;
+    font-size: 16px;
+    image-rendering: pixelated;
+    line-height: 11px;
+}
+			::-moz-selection { 
+  color: #000000;
+  background: #ffffff;
+}
+	::selection {
+  color: #000000;
+  background: #ffffff;
+}
+
+
+a:link {
+  color: #beff02;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #beff02;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #5c5b6a;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  color: #5c5b6a;
+  background-color: transparent;
+  text-decoration: none;
+}
+#winamp {
+width: 158px;
+height: 9px;
+overflow: hidden;
+filter: contrast(200%) saturate(10);
+position: relative;
+left: 251px;
+}
+.parent {
+  display: grid; 
+  grid-template-columns: 19px 176px 133px 133px; 
+  grid-template-rows: 15px 300px 11px; 
+  gap: 4px 4px; 
+  grid-template-areas: 
+    "top top top top"
+    "tbar scene w1 w2"
+    "bot bot bot bot"; 
+  width: 467px; 
+  height: 348px; 
+position: absolute;
+top: 30px;
+left: 30px;
+}
+.top {
+grid-area: top;
+width: 476px;
+height: 11px;
+padding: 2px;
+border: 1px solid #ffffff;
+background-color: #000000;
+background-image: url("https://soap11111111.github.io/img/abt/tb2.png");
+background-position-y: 50%;
+background-position-x: 2px;
+background-repeat: no-repeat;
+text-align: right;
+}
+.bot {
+grid-area: bot;
+width: 476px;
+height: 11px;
+padding: 2px;
+border: 1px solid #ffffff;
+background-color: #000000;
+display: inline-flex;
+flex-direction: row;
+}
+.tbar {
+grid-area: tbar;
+width: 19px;
+height: 300px;
+padding: 0px;
+background-image: url("https://soap11111111.github.io/img/abt/tb1.png");
+background-position: 50%;
+background-repeat: no-repeat;
+border: 1px solid #ffffff;
+background-color: #000000;
+}
+.w1 {
+grid-area: w1;
+height: 304px;
+display: inline-flex;
+flex-direction: column;
+margin-top: -2px;
+}
+.w2 {
+grid-area: w2;
+height: 304px;
+display: inline-flex;
+flex-direction: column;
+margin-top: -2px;
+}
+.scene {
+grid-area: scene;
+border: 1px solid #ffffff;
+width: 176px;
+height: 300px;
+background-color: #000000;
+background-image: url("https://soap11111111.github.io/img/abt/me.png");
+background-repeat: no-repeat;
+background-position: center;
+}
+.gnm {
+overflow-y: hidden;
+overflow-x: hidden;
+width: 133px;
+height: 171px;
+word-spacing: 1px;
+border: 1px solid #ffffff;
+padding: 0px;
+background-image: url("https://soap11111111.github.io/img/abt/gnm.gif");
+background-repeat: no-repeat;
+background-color: #000000;
+}
+.gnminl {
+overflow-y: auto;
+overflow-x: hidden;
+width: 62px;
+height: 108px;
+border: 1px solid #ffffff;
+background-image: url("https://soap11111111.github.io/img/abt/dna.gif");
+background-position: fixed;
+background-repeat: repeat-y;
+background-color: rgba(0, 0, 0, 0);
+position: relative;
+top: 58px;
+left: 65px;
+text-align: right;
+line-height: 8px;
+padding-right: 2px;
+}
+.freq {
+width: 133px;
+height: 73px;
+border: 1px solid #ffffff;
+padding: 0px;
+background-image: url("https://soap11111111.github.io/img/abt/freq.gif");
+background-repeat: no-repeat;
+background-position: center;
+background-color: #000000;
+}
+
+.cmd {
+background-image: url("https://soap11111111.github.io/img/abt/pattrn1.gif");
+background-repeat: repeat;
+overflow-y: auto;
+overflow-x: hidden;
+width: 136px;
+height: 263px;
+text-wrap: wrap;
+word-spacing: 1px;
+border: 1px solid #ffffff;
+padding-left: 2px;
+padding-right: 2px;
+background-color: #000000;
+line-height: 8px;
+        }
+.cmd br {
+line-height: 1pt;
+}
+.cmd img {
+letter-spacing: 0px;
+padding: 0px;
+margin: 0px;
+}
+.nfo1 {
+width: 131px;
+height: 18px;
+font-family: Visitor;
+font-size: 8px;
+color: #ffffff;
+border: 1px solid #ffffff;
+background-color: #000000;
+overflow: hidden;
+line-height: 1px;
+padding-left: 2px;
+text-wrap: nowrap;
+}
+.nfo2 { 
+width: 138px;
+height: 18px;
+font-family: Visitor;
+font-size: 8px;
+color: #ffffff;
+border: 1px solid #ffffff;
+background-color: #000000;
+overflow: hidden;
+line-height: 16px;
+padding-left: 2px;
+text-wrap: nowrap;
+}
+
+#unix-time {
+font-family: Visitor;
+font-size: 8px;
+color: #ffffff;
+position: relative;
+display: inline-flex;
+padding-left: 2px;
+width: 1px;
+overflow: visible;
+}
+
+h1  {
+font-family: Visitor;
+font-size: 8px;
+font-weight: normal;
+color: #ffffff;
+position: relative;
+line-height: 2px;
+}
+f1 {
+font-size: 8px;
+}
+.nfo2 span {
+                text-align: center;
+                -moz-transform: translateX(100%);
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+                -moz-animation: scroll-left 2s linear infinite;
+                -webkit-animation: scroll-left 2s linear infinite;
+                animation: scroll-left 20s linear infinite;
+  overflow: hidden;
+}
+            
+            @-moz-keyframes scroll-left {
+                0% {
+                    -moz-transform: translateX(100%);
+                }
+                100% {
+                    -moz-transform: translateX(-100%);
+                }
+            }
+            
+            @-webkit-keyframes scroll-left {
+                0% {
+                    -webkit-transform: translateX(100%);
+                }
+                100% {
+                    -webkit-transform: translateX(-100%);
+                }
+            }
+            
+            @keyframes scroll-left {
+                0% {
+                    -moz-transform: translateX(100%);
+                    -webkit-transform: translateX(100%);
+                    transform: translateX(100%);
+                }
+                100% {
+                    -moz-transform: translateX(-100%);
+                    -webkit-transform: translateX(-100%);
+                    transform: translateX(-100%);
+                }
+            }
+	</style>
+<title>ABOUT \ SOAP1_ONLiNE</title>
+<link rel="icon" type="image/x-icon" href="http://soap11111111.github.io/img/fav.ico">
+</head>
+<body>
+<div class="parent">
+<div class="top">
+<img draggable="false" (dragstart)="false;"  src="https://soap11111111.github.io/img/abt/tb3.png">
+</div>
+<div class="tbar">
+</div>
+<div class="scene">
+</div>
+<div class="w1">
+<h1>
+basic.nfo
+</h1>
+<div class="nfo1">
+<img draggable="false" (dragstart)="false;"  src="https://soap11111111.github.io/img/abt/nom.png" style="margin-bottom: -5px;">/2<f1>█</f1>/f/dumbasz
+</div>
+<h1>
+brainfreq.monitor
+</h1>
+<div class="freq" id="freq">
+
+</div>
+<h1>
+gnm.edit
+</h1>
+<div class="gnm">
+<div class="gnminl">
+<font face="Pixelstad" color="#ffffff">
+CAAGCGCC
+CCAACAAT
+GCAGTCAT
+TCTCTATC
+TCTTTCCT
+TCGGCTCC
+TTTGCGGT
+ACTATCTC
+TTTCCTTC
+GGCTCCTT
+TGCGGTAG
+TGCCGACA
+ATAATGCG
+ATGGGTGA
+CACTGCTG
+TTGTCGGC
+TAGATGCG
+GCGGGCGC
+GCGGTGAC
+ATTATAAA
+</font>
+</div>
+</div>
+</div>
+<div class="w2">
+<h1>
+cmd.exe
+</h1>
+<div class="cmd" id="scrl">
+<font face="Pixelstad" color="#ffffff">
+[[xen_ntwk / <img draggable="false" (dragstart)="false;"  src="https://soap11111111.github.io/img/cr.png">
+ soap1. some rights reserved.]]
+<br>
+<br>
+] run %user%/rec/<img draggable="false" (dragstart)="false;"  src="https://soap11111111.github.io/img/abt/mu.png">/list/bd.m3u
+<br>
+list_detected / migrane_list
+<br>
+list_length / 1:27:09
+<br>
+<br>
+[[tracks]]
+<br>
+01 / ecco2k - pxe [1:27]
+<br>
+02 / bj<img draggable="false" (dragstart)="false;"  src="https://soap11111111.github.io/img/abt/ö.png">rk - declare independence [4:13]
+<br>
+03 / black dresses-nausea 2019 [2:46]
+<br>
+04 / afx-fenixfunk 5 [5:01]
+<br>
+05 / a.g. cook-nu crush [3:18]
+<br>
+06 / prolaps-internal alchemy [14:45]
+<br>
+07 / squarepusher-chin hippy [3:16]
+<br>
+08 / vsnares-nepetalactone [4:27]
+<br>
+09 / death grips-punk weight [3:24]
+<br>
+10 / a.g. cook-illuminated biker gang [4:26]
+<br>
+11 / arca-slit thru [2:12]
+<br>
+12 / autechre-c16 deep thread [12:31]
+<br>
+13 / afx-<img draggable="false" (dragstart)="false;"  src="https://soap11111111.github.io/img/abt/f1.png">
+<img draggable="false" (dragstart)="false;"  src="https://soap11111111.github.io/img/abt/f2.png"> [5:47]
+<br>
+14 / cobrah-icon [2:24]
+<br>
+15 / death grips-interview 2016 #1 [4:50]
+<br>
+16 / arca-get out the fucking car [3:16]
+<br>
+17 / sophie-whole new world/pretend world [9:06]
+<br>
+<br>
+] run %user%/dna/gnm/match.cmd
+<br>
+user_detected / soap1
+<br>
+user_age / <f1>██</f1> (adult)
+<br>
+user_ktype / 46xx
+<br>
+gnm_override_in_progress / y
+<br>
+scanning full genome for matches...
+<br>
+<br>
+[[results]]
+<br>
+homo_sapien / 78%
+<br>
+tenodera_sinensis / 19.6%
+<br>
+other / 3.4%
+<br>
+<br>
+<img draggable="false" (dragstart)="false;"  src="https://soap11111111.github.io/img/abt/blnk.gif">
+</font>
+<script>
+var objDiv = document.getElementById("scrl");
+objDiv.scrollTop = objDiv.scrollHeight;
+ var objDiv = document.getElementById("scrl"); objDiv.scrollTop = objDiv.scrollHeight; </script>
+</div>
+<h1>
+tool.nfo
+</h1>
+<div class="nfo2">
+<span>
+procrt/ps/ai/blndr/ntpd
+</span>
+</div>
+</div>
+<div class="bot">
+<font face="Visitor" color="#ffffff" style="font-size:8px">
+sys.time //
+<script>
+  setInterval(() => {
+    document.getElementById('unix-time').textContent =
+      Math.floor(Date.now() / 1000);
+  }, 1000);
+</script>
+<div id="unix-time"></div>
+</font>
+<iframe id="winamp" src="https://soap11111111.github.io/abt/wamp1.html" frameborder="0" name="winamp">
+</iframe>
+</div>
+</div>
+</body>
+</html>
