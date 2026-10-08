@@ -1,0 +1,183 @@
+	body {
+	font-smooth: never;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #000000;
+    font-size: 12px;
+	image-rendering: pixelated;
+      font-family: MS Gothic;
+}
+a {
+  cursor: crosshair;
+}
+				@font-face {
+   font-family: MS Gothic;
+   src: url(https://file.garden/ZkBMEUcxSy6EAJ37/web/MS-Gothic.woff);
+}
+				@font-face {
+   font-family: Sir Clive the Bold;
+   src: url(https://file.garden/ZkBMEUcxSy6EAJ37/web/SIRCLIVETHEBOLD.woff);
+}
+			::-moz-selection { 
+  color: #000000;
+  background: #ffffff;
+}
+	::selection {
+  color: #000000;
+  background: #ffffff;
+}
+a:link {
+  color: #beff02;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #beff02;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #5c5b6a;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  color: #5c5b6a;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.userpic img {
+  border: 3px double #ffffff;
+}
+
+
+.module-header {
+  border-bottom: 1px solid;
+  font-family: Sir Clive the Bold;
+font-size: 15px;
+letter-spacing: 1px;
+}
+
+#primary .month .header, #primary .tags-container h2, #primary .icons-container h2, #primary .entry .entry-title {
+  border-bottom: 1px solid;
+  font-family: Sir Clive the Bold;
+font-size: 15px;
+letter-spacing: 1px;
+}
+.module-calendar td {
+  padding: 0px 1px;
+  text-align: center !important;
+}
+#lj_controlstrip
+{
+position: absolute;
+  top: -6969px;
+  }
+    .two-columns-left #secondary,
+    .three-columns-sides #secondary {
+
+        margin-left: -16em;
+    }
+
+#content-wrapper {
+ margin-left: 1em; 
+}
+
+#secondary {
+  border: 1px solid #ffffff;
+}
+
+#primary {
+  border: 1px solid #ffffff;
+    width: 70%;
+}
+#content-wrapper {
+  margin-left: 1em;
+  padding-bottom: 0px;
+  margin-bottom: -20px;
+}
+
+
+iframe.lj_embedcontent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  border: 0px;
+  filter: saturate(0%) brightness(147%) contrast(100000%);
+  margin: 8px 0px;
+}
+  
+.module-syndicate img {
+    filter: invert(1) contrast(200%) brightness(1000%) hue-rotate(-100deg) saturate(500%);
+}
+.module-header a, .entry-title a, ul.entry-interaction-links li a, ul.entry-management-links li a {
+  color: #ffffff !important;
+}
+    .comment-thread .inner {background-color:#fff; color:#000 !important; margin-left:10px;}    
+    .module-section-two .module-content {padding:20px;padding: 0px 30px !important;text-align: justify;text-justify: inter-character;}
+.module-time .module-content {
+        width: 156px;
+}
+.module-powered .module-content, .module-time .module-content {
+    width: 168px;
+}
+#load-time {
+  text-align: justify;
+  text-justify: inter-character;
+  letter-spacing: 0.7583px;
+}
+.link, .module-content, .manage-link, .page-top {
+    text-transform: lowercase;
+}
+#canvas {
+  position: relative;
+  width: 750px;
+  margin-left: -25px !important;
+  margin-right: 0px;
+}
+    .two-columns-left #secondary,
+    .three-columns-sides #secondary {
+        float: left;
+        width: 13em;
+        margin-left: -14em;
+    }
+#header {
+  height: 150px !important;
+  color: #000 !important;
+  max-width: 750px !important;
+  position: relative;
+  margin-left: 2.7em;
+  margin-right: 0.6em;
+}
+h1 #title, #header {
+  display: none !important;
+}
+
+  .link edit_entry first-item {
+    font-size: 16px !important;
+    position: relative !important;
+    top: 2px !important;
+}
+ul.entry-interaction-links li, ul.entry-interaction-links li {
+        line-height: 0px !important;
+    padding: 0px !important;
+  }
+img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+li.watch, li.tell_friend {
+  display: none;
+}
+    .two-columns #tertiary {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+  }
