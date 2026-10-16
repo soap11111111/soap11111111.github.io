@@ -7,6 +7,7 @@
 	image-rendering: pixelated;
       font-family: MS Gothic;
 }
+
 a {
   cursor: crosshair;
 }
@@ -36,15 +37,17 @@ a:visited {
   background-color: transparent;
   text-decoration: none;
 }
-a:hover {
-  color: #5c5b6a;
-  background-color: transparent;
-  text-decoration: none;
+a:hover, 
+ul.text-links a:hover {
+  color: #5c5b6a !important;
+  background-color: transparent !important;
+  text-decoration: none !important;
 }
-a:active {
-  color: #5c5b6a;
-  background-color: transparent;
-  text-decoration: none;
+a:active, 
+ul.text-links a:active {
+  color: #5c5b6a !important;
+  background-color: transparent !important;
+  text-decoration: none !important;
 }
 
 .userpic img {
@@ -57,6 +60,7 @@ a:active {
   font-family: Sir Clive the Bold;
 font-size: 15px;
 letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 #primary .month .header, #primary .tags-container h2, #primary .icons-container h2, #primary .entry .entry-title {
@@ -64,6 +68,7 @@ letter-spacing: 1px;
   font-family: Sir Clive the Bold;
 font-size: 15px;
 letter-spacing: 1px;
+  text-transform: uppercase;
 }
 .module-calendar td {
   padding: 0px 1px;
@@ -90,7 +95,9 @@ position: absolute;
 
 #primary {
   border: 1px solid #ffffff;
-    width: 70%;
+    width: 100%;
+  z-index: 6969;
+  position: relative;
 }
 #content-wrapper {
   margin-left: 1em;
@@ -121,8 +128,11 @@ iframe.lj_embedcontent {
 .module-time .module-content {
         width: 156px;
 }
-.module-powered .module-content, .module-time .module-content {
+.module-powered .module-content {
     width: 168px;
+}
+.module-time .module-content {
+width: 175px;
 }
 #load-time {
   text-align: justify;
@@ -134,7 +144,7 @@ iframe.lj_embedcontent {
 }
 #canvas {
   position: relative;
-  width: 750px;
+  width: 660px;
   margin-left: -25px !important;
   margin-right: 0px;
 }
@@ -176,8 +186,43 @@ img {
 li.watch, li.tell_friend {
   display: none;
 }
-    .two-columns #tertiary {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
+
+
+@supports (-moz-appearance:none) {
+html {
+scrollbar-color: #ffffff #000000;
+    scrollbar-width: thin;
+}
+div {
+scrollbar-color: #ffffff #000000;
+scrollbar-width: thin;
+}
   }
+
+.two-columns #tertiary {
+  position: absolute;
+  left: 0px;
+  bottom: 6px;
+  width: 300px !important;
+}
+.page-top {
+  text-align: left;
+  padding: 0px;
+  width: 90px;
+  margin-left: 34px;
+  margin-top: -16px;
+  position: relative;
+  z-index: 420
+}
+
+.entry-wrapper {
+  margin-bottom: 0px !important;
+  border-bottom: 1px solid #fff;
+}
+ul.entry-interaction-links, .comment-interaction-links {
+  margin-top: 16px !important;
+}
+.ContextualPopup-trigger a, .module a, .userpic a #site-branding a {
+  target-new: tab !important;
+  target-name: new !important;
+}
