@@ -79,7 +79,7 @@ border-top: 1px solid #ffffff;
   background: #ffffff;
 }
 
-  a, button, select {
+a, button, select, summary {
 cursor: url(https://soap11111111.github.io/img/curlnk.gif) 0 0, auto !important;
 }
 
