@@ -66,5 +66,29 @@ scrollbar-width: thin;
 ::-webkit-scrollbar-button:single-button:horizontal:increment {
             background-image: url("https://soap11111111.github.io/1/img/right.png");
         }
+
+a, button, select {
+cursor: url(https://soap11111111.github.io/img/curlnk.gif) 0 0, auto !important;
+}
+
+body {
+cursor: url(https://soap11111111.github.io/img/cur.gif) 0 0, auto;
+}
+
+p, font, textarea, input {
+cursor: url(https://soap11111111.github.io/img/curtxt.gif) 0 0, auto !important;
+}
+
+#xxx {
+cursor: url(https://soap11111111.github.io/img/curexp.gif) 0 0, auto !important;
+}
+
+#info {
+cursor: url(https://soap11111111.github.io/img/curnfo.gif) 0 0, auto !important;
+}
+
+#no {
+cursor: url(https://soap11111111.github.io/img/curno.gif) 0 0, auto !important;
+}
     }
 }
