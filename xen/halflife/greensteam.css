@@ -365,6 +365,7 @@ input[type=range].ticks::after {
   cursor: nwse-resize;
   content: '';
   background-image: url("img/resize.png");
+  cursor: url(https://soap11111111.github.io/img/curdiagr.gif) 0 0, auto !important;
 }
 .window.half,
 .window-row .window {
